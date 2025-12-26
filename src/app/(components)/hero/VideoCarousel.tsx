@@ -2,10 +2,10 @@
 import React from "react";
 import BannerCard from "./BannerCard";
 
-const imgFigure = "https://d1735p3aqhycef.cloudfront.net/official-website/public/landing-page/home/video_clone_agent.png";
-const imgFigure1 = "https://d1735p3aqhycef.cloudfront.net/official-website/public/landing-page/home/holiday_sale.png";
-const imgFigure2 = "https://d1735p3aqhycef.cloudfront.net/official-website/public/landing-page/home/veo_4.png";
-const imgFigure3 = "https://d1735p3aqhycef.cloudfront.net/official-website/public/landing-page/home/sora_2.png";
+const imgFigure = "/Figure.png";
+const imgFigure1 = "/Figure-1.png";
+const imgFigure2 = "/Figure-2.png";
+const imgFigure3 = "/Figure-3.png";
 
 const carouselItems = [
   {

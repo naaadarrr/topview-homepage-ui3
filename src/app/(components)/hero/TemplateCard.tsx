@@ -28,7 +28,7 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
 
 export default function TemplateCard({ image, title, aspectRatio, hideTitle }: TemplateCardProps) {
   return (
-    <div className={`relative group cursor-pointer rounded-[12px] transition-all duration-300 flex flex-col overflow-hidden h-full ${hideTitle ? 'bg-[#000000eb] hover:bg-[rgba(255,255,255,0.08)]' : 'bg-[#000000eb] hover:bg-white/15'}`}>
+    <div className={`relative group cursor-pointer rounded-[12px] transition-all duration-300 flex flex-col overflow-hidden h-full ${hideTitle ? 'bg-[#000000eb] hover:bg-[rgba(255,255,255,0.16)]' : 'bg-[#000000eb] hover:bg-white/15'}`}>
       {/* Image Frame */}
       <div className={`relative w-full ${aspectRatio ? aspectRatio : 'overflow-hidden flex-grow'} rounded-[12px] transition-all duration-300`}>
         <img
@@ -46,13 +46,20 @@ export default function TemplateCard({ image, title, aspectRatio, hideTitle }: T
         )}
 
         {/* Top Right Sound Icon - Only visible on hover for Video Agent type */}
+        {/* Top Right Sound Icon & Gradient - Only visible on hover for Video Agent type */}
         {!hideTitle && (
-          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="w-8 h-8 rounded-full bg-[rgba(255,255,255,0.08)] backdrop-blur backdrop-filter flex items-center justify-center relative overflow-hidden group/sound">
-              <SoundIcon />
-              {/* Glossy/Shine overlays from Figma 4282:1596 */}
-              <div className="absolute inset-0 pointer-events-none shadow-[inset_0px_1px_24px_6px_rgba(255,255,255,0.16)]" />
-              <div className="absolute inset-0 pointer-events-none opacity-0 group-hover/sound:opacity-100 shadow-[inset_0px_0px_12px_0px_rgba(241,201,255,0.2),inset_0px_1px_8px_0px_rgba(255,255,255,0.12)] transition-opacity" />
+          <div className="absolute top-0 left-0 right-0 h-[55px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none">
+            {/* Gradient Mask */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0.24)] to-transparent" />
+
+            {/* Sound Button */}
+            <div className="absolute top-2 right-2 pointer-events-auto">
+              <div className="w-8 h-8 rounded-full bg-[rgba(255,255,255,0.08)] backdrop-blur backdrop-filter flex items-center justify-center relative overflow-hidden group/sound">
+                <SoundIcon />
+                {/* Glossy/Shine overlays from Figma 4282:1596 */}
+                <div className="absolute inset-0 pointer-events-none shadow-[inset_0px_1px_24px_6px_rgba(255,255,255,0.16)]" />
+                <div className="absolute inset-0 pointer-events-none opacity-0 group-hover/sound:opacity-100 shadow-[inset_0px_0px_12px_0px_rgba(241,201,255,0.2),inset_0px_1px_8px_0px_rgba(255,255,255,0.12)] transition-opacity" />
+              </div>
             </div>
           </div>
         )}
@@ -62,16 +69,13 @@ export default function TemplateCard({ image, title, aspectRatio, hideTitle }: T
       {hideTitle ? (
         /* Avatar Type - Generate Button below on hover */
         <div className="max-h-0 opacity-0 group-hover:max-h-[70px] group-hover:opacity-100 transition-all duration-300 overflow-hidden">
-          <div className="p-[12px]">
-            <button
-              className="w-full bg-[#3643ff] border border-[rgba(255,255,255,0.03)] border-solid py-[8px] rounded-[8px] flex items-center justify-center gap-[8px] relative overflow-hidden transition-transform active:scale-95 group/btn"
-            >
+          <div className="p-3">
+            <button className="w-full bg-[#3643ff] hover:bg-[#2b36cc] transition-colors px-[18px] py-2 rounded-[8px] flex items-center justify-center gap-2 relative group/btn">
               <span className="text-white font-['Outfit',sans-serif] font-semibold text-[14px] leading-[18px]">
                 Generate
               </span>
               <ArrowRightIcon className="text-white w-4 h-4" />
-              {/* Inner Shadow/Glossy Effect */}
-              <div className="absolute inset-0 shadow-[inset_0px_1px_24px_6px_rgba(255,255,255,0.16)] pointer-events-none rounded-[8px]" />
+              <div className="absolute inset-0 pointer-events-none shadow-[inset_0px_1px_20px_6px_rgba(255,255,255,0.16)] rounded-[8px]" />
             </button>
           </div>
         </div>

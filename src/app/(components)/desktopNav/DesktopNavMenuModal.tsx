@@ -1,7 +1,5 @@
-"use client";
-
-import React from "react";
-import { MenuId } from "../config";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 
 interface DesktopNavMenuModalProps {
@@ -43,42 +41,64 @@ const menuSections = [
 
 export default function DesktopNavMenuModal({ isOpen, onClose }: DesktopNavMenuModalProps) {
     const router = useRouter();
+    const [mounted, setMounted] = useState(false);
 
-    if (!isOpen) return null;
+    useEffect(() => {
+        setMounted(true);
+        return () => setMounted(false);
+    }, []);
 
-    return (
-        <div className="fixed inset-0 z-[2000] flex items-start justify-center pt-[64px]">
+    // Prevent scrolling when modal is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
+
+    if (!mounted || !isOpen) return null;
+
+    return createPortal(
+        <div className="fixed inset-0 z-[2000] flex items-start justify-center pt-[116px]">
             {/* Backdrop */}
-            <div className="absolute inset-0 bg-transparent" onClick={onClose} />
-            
-            {/* Modal Content */}
-            <div 
-                className="relative w-fit backdrop-blur-[20px] bg-gradient-to-r from-black/92 to-black/92 border border-white/10 rounded-[16px] shadow-2xl p-6 flex gap-10"
-                style={{ 
-                    backgroundImage: "linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%), linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.92) 100%)" 
+            <div
+                className="absolute inset-0 bg-transparent"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    onClose();
                 }}
+            />
+
+            {/* Modal Content */}
+            <div
+                className="relative w-fit bg-[#1C1C1D] border border-[#272729] rounded-[16px] shadow-2xl p-6 flex gap-10 animate-in fade-in zoom-in-95 duration-200"
+                onClick={(e) => e.stopPropagation()}
             >
                 {menuSections.map((section) => (
                     <div key={section.title} className="flex flex-col min-w-[160px]">
                         {/* Section Title */}
                         <div className="px-2 py-2">
-                            <span className="text-[rgba(255,255,255,0.64)] text-[14px] font-medium font-['Outfit',sans-serif] leading-[20px]">
+                            <span className="text-[rgba(255,255,255,0.5)] text-[12px] font-medium font-['Outfit',sans-serif] leading-[20px] uppercase tracking-wider">
                                 {section.title}
                             </span>
                         </div>
-                        
+
                         {/* Items */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col gap-1">
                             {section.items.map((item) => (
-                                <div 
+                                <div
                                     key={item.name}
                                     onClick={() => {
                                         router.push(item.link);
                                         onClose();
                                     }}
-                                    className="px-2 py-2 rounded-[8px] hover:bg-white/5 cursor-pointer transition-colors"
+                                    className="group flex items-center px-3 py-2.5 rounded-[12px] hover:bg-[rgba(255,255,255,0.16)] cursor-pointer transition-all duration-200"
                                 >
-                                    <span className="text-white text-[14px] font-medium font-['Outfit',sans-serif] leading-[20px] whitespace-nowrap">
+                                    <span className="text-white text-[14px] font-medium font-['Outfit',sans-serif] leading-[20px] whitespace-nowrap group-hover:text-white transition-colors">
                                         {item.name}
                                     </span>
                                 </div>
@@ -87,6 +107,7 @@ export default function DesktopNavMenuModal({ isOpen, onClose }: DesktopNavMenuM
                     </div>
                 ))}
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }

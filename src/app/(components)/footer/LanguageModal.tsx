@@ -20,7 +20,7 @@ export default function LanguageModal({ isOpen, onClose, currentLanguage, onSele
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4">
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-black/60 backdrop-blur-sm"
@@ -38,12 +38,14 @@ export default function LanguageModal({ isOpen, onClose, currentLanguage, onSele
                         onClick={onClose}
                         className="p-1 hover:opacity-80 transition-opacity"
                     >
-                        <img src={imgClose} alt="Close" className="w-[14px] h-[14px]" />
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L13 13M1 13L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                     </button>
                 </div>
 
                 {/* Language Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[12px] gap-y-[8px]">
+                <div className="flex flex-wrap gap-x-[12px] gap-y-[8px]">
                     {languages.map((language) => {
                         const isSelected = language === currentLanguage;
                         return (
@@ -54,25 +56,18 @@ export default function LanguageModal({ isOpen, onClose, currentLanguage, onSele
                                     onClose();
                                 }}
                                 className={`
-                  flex items-center px-[12px] py-[10px] rounded-[8px] cursor-pointer transition-colors
-                  ${isSelected ? 'bg-[#2C2C2E]' : 'hover:bg-[#2C2C2E]'}
-                `}
+                                    flex items-center px-[12px] py-[6px] rounded-[4px] cursor-pointer transition-all w-[240px]
+                                    ${isSelected ? 'bg-[#2C2C2E]' : 'hover:bg-[rgba(255,255,255,0.05)]'}
+                                `}
                             >
-                                {isSelected ? (
-                                    <span
-                                        className="text-[14px] font-medium font-['Outfit',sans-serif] bg-clip-text text-transparent"
-                                        style={{
-                                            backgroundImage: "linear-gradient(89.86deg, #7881FF 0%, #C1C5FF 99.94%)",
-                                            WebkitBackgroundClip: "text"
-                                        }}
-                                    >
-                                        {language}
-                                    </span>
-                                ) : (
-                                    <span className="text-[14px] font-medium text-white font-['Outfit',sans-serif]">
-                                        {language}
-                                    </span>
-                                )}
+                                <span className={`text-[14px] font-['Outfit',sans-serif] leading-[20px] font-medium ${isSelected ? 'text-transparent bg-clip-text' : 'text-white'}`}
+                                    style={isSelected ? {
+                                        backgroundImage: "linear-gradient(89.86deg, #7881FF 0%, #C1C5FF 99.94%)",
+                                        WebkitBackgroundClip: "text",
+                                        WebkitTextFillColor: "transparent"
+                                    } : {}}>
+                                    {language}
+                                </span>
                             </div>
                         );
                     })}

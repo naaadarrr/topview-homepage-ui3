@@ -9,7 +9,7 @@ interface SectionWithTitleProps {
 
 export default function SectionWithTitle({ title, titleStyle, children }: SectionWithTitleProps) {
     return (
-        <Box w="100%" px={{ base: "16px", xl: "0" }} mt={{ base: "48px", xl: "104px" }}>
+        <Box w="100%" px={{ base: "16px", xl: "0" }} mt="0">
             {title && (
                 <Heading
                     as="h2"

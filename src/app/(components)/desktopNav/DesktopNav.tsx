@@ -18,7 +18,7 @@ const imgTopview =
 const imgIcon =
     "http://localhost:3845/assets/10dbc82f710a75e9b5720403d1b683ad28dc4354.svg";
 
-const imgChevron = "http://localhost:3845/assets/ee96a1c4af65dfccd01113776b12761c910a5c3d.svg";
+const imgChevron = "/Dropdown icon.svg";
 
 type SidebarUpgradeProps = {
     className?: string;
@@ -138,30 +138,36 @@ export default function DesktopNav() {
 
             {/* 中间菜单 */}
             <div className="flex items-center justify-center gap-[4px]">
-                {menuItems.map((item) => (
-                    <div
-                        key={item.name}
-                        onClick={() => {
-                            if (item.name === "AI tools") {
-                                onMenuOpen();
-                            }
-                        }}
-                        className="group flex items-center gap-[4px] px-[16px] py-[8px] cursor-pointer hover:bg-white/5 rounded-[20px] transition-all"
-                    >
-                        <span className="text-[rgba(255,255,255,0.64)] group-hover:text-white text-[16px] font-normal font-['Outfit',sans-serif] leading-[24px] transition-colors">
-                            {item.name}
-                        </span>
-                        {item.hasIcon && (
-                            <div className="relative w-[8px] h-[4px] opacity-64 group-hover:opacity-100 transition-opacity">
-                                <img
-                                    alt=""
-                                    className="block max-w-none size-full brightness-0 invert"
-                                    src={imgChevron}
-                                />
-                            </div>
-                        )}
-                    </div>
-                ))}
+                {menuItems.map((item) => {
+                    const isActive = item.name === "AI tools" && isMenuOpen;
+                    return (
+                        <div
+                            key={item.name}
+                            onClick={() => {
+                                if (item.name === "AI tools") {
+                                    onMenuOpen();
+                                }
+                            }}
+                            className={`
+                                group flex items-center gap-[4px] px-[16px] py-[8px] cursor-pointer rounded-full transition-all
+                                ${isActive ? "bg-[rgba(255,255,255,0.16)] text-white" : "text-[rgba(255,255,255,0.64)] hover:bg-[rgba(255,255,255,0.16)] hover:text-white"}
+                            `}
+                        >
+                            <span className="text-[16px] font-normal font-['Outfit',sans-serif] leading-[24px] transition-colors">
+                                {item.name}
+                            </span>
+                            {item.hasIcon && (
+                                <div className={`relative w-6 h-6 transition-all duration-300 ${isActive ? "rotate-180 opacity-100" : "opacity-80 group-hover:opacity-100"}`}>
+                                    <img
+                                        alt=""
+                                        className="block max-w-none size-full brightness-0 invert"
+                                        src={imgChevron}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    );
+                })}
             </div>
 
             {/* 右侧按钮 */}

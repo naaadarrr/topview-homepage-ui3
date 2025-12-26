@@ -6,26 +6,26 @@ import TemplateCard from "./TemplateCard";
 const defaultCategories = [
   "All", "Nutra", "Beauty", "Health", "Wellness", "Fitness", "Nutrition",
   "Skincare", "Makeup", "Haircare", "Self-Care", "Meditation", "Mindfulness",
-  "Wellbeing", "Fashion", "Lifestyle", "Cosmetics", "Hygiene", "Aromatherapy"
+  "Wellbeing", "Fashion", "Lifestyle", "Cosmetics", "Hygiene", "Aromatherapy",
+  "Gaming", "Travel", "Food", "Tech", "Cars", "Music", "Art", "Design", "Nature", "Business"
 ];
 
 const defaultTemplates = [
-  { title: "Explosion", image: "http://localhost:3845/assets/543f29cb218d9d7b2855b55eb53c843855f63352.png", height: "h-[556px]" },
-  { title: "Melt Transition", image: "http://localhost:3845/assets/2bdd39b5dff1d34b670d4a80ab19fc53c4359443.png", height: "h-[494px]" },
-  { title: "Ahegao", image: "http://localhost:3845/assets/32fb3ac5098aa7a94dcdb0d7527cfd82ba72d4d8.png", height: "h-[274px]" },
-  { title: "Flame Transition", image: "http://localhost:3845/assets/ad6fefdd6a7ca2fe0d5d7a9c943fc143288ac253.png", height: "h-[494px]" },
-  { title: "Train Rush", image: "http://localhost:3845/assets/003a754163e75cb0d1554c597a870847f4853469.png", height: "h-[493px]" },
-  { title: "Splash Transition", image: "http://localhost:3845/assets/a7ac5a2f3662bcedbb00dc0e15bdae9f7dbfa61d.png", height: "h-[494px]" },
-  { title: "Firelava", image: "http://localhost:3845/assets/ecfca909cb554083f7d8e201ff5a580c441b894e.png", height: "h-[279px]" },
-  { title: "Flame On", image: "http://localhost:3845/assets/53990f186e914b2a01534d7f258eaecf7beef9cb.png", height: "h-[278px]" },
-  { title: "Shadow Smoke", image: "http://localhost:3845/assets/142f724b536121592342b8ee764f64b1598c5f7f.png", height: "h-[494px]" },
-  { title: "Earth Wave", image: "http://localhost:3845/assets/cee7bb806571085fd56e3320b0d79550afe855d7.png", height: "h-[208px]" },
-  { title: "Giant Grab", image: "http://localhost:3845/assets/b0a85e1cb392bc905cff1019534b8482b03a2768.png", height: "h-[494px]" },
-  { title: "Earth Zoom Out", image: "http://localhost:3845/assets/1895af8c7ae204fbb9d6407abde51e126bcf98fa.png", height: "h-[563px]" },
-  { title: "Raven Transition", image: "http://localhost:3845/assets/f009c1577e409c021106e7af4b7b777a17b8ac54.png", height: "h-[494px]" },
-  { title: "Animalization", image: "http://localhost:3845/assets/4f78dca8a5706d0e60d281f7928272969165fb18.png", height: "h-[494px]" },
-  { title: "Air Bending", image: "http://localhost:3845/assets/c79f9ed45aefb50f3a43943671e309e3513f3096.png", height: "h-[492px]" },
-  { title: "Water Bending", image: "http://localhost:3845/assets/613a906df4e231d4a0a0a7632d8e9e0f72f190ce.png", height: "h-[208px]" },
+  { title: "Explosion", image: "/Loading the media file....png", height: "h-[556px]" },
+  { title: "Melt Transition", image: "/Loading the media file...-1.png", height: "h-[494px]" },
+  { title: "Ahegao", image: "/Loading the media file...-2.png", height: "h-[274px]" },
+  { title: "Flame Transition", image: "/Loading the media file...-3.png", height: "h-[494px]" },
+  { title: "Train Rush", image: "/Loading the media file...-4.png", height: "h-[493px]" },
+  { title: "Splash Transition", image: "/Loading the media file...-5.png", height: "h-[494px]" },
+  { title: "Firelava", image: "/Loading the media file...-6.png", height: "h-[279px]" },
+  { title: "Flame On", image: "/Loading the media file...-7.png", height: "h-[278px]" },
+  { title: "Shadow Smoke", image: "/Loading the media file...-8.png", height: "h-[494px]" },
+  { title: "Earth Wave", image: "/Loading the media file...-9.png", height: "h-[208px]" },
+  { title: "Giant Grab", image: "/Loading the media file...-10.png", height: "h-[494px]" },
+  { title: "Earth Zoom Out", image: "/Loading the media file...-11.png", height: "h-[563px]" },
+  { title: "Raven Transition", image: "/Loading the media file...-12.png", height: "h-[494px]" },
+  { title: "Animalization", image: "/Loading the media file...-13.png", height: "h-[494px]" },
+  { title: "Air Bending", image: "/Loading the media file...-14.png", height: "h-[492px]" },
 ];
 
 interface TabItemProps {
@@ -38,19 +38,31 @@ const TabItem = ({ text, isActive, onClick }: TabItemProps) => {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-[8px] text-[12px] font-['Outfit',sans-serif] transition-all whitespace-nowrap border relative group ${isActive
-        ? "border-white/64 text-white"
+      className={`px-3 py-1.5 rounded-[8px] text-[14px] font-[500] font-['Outfit',sans-serif] transition-all whitespace-nowrap border relative flex items-center justify-center min-w-[53px] leading-[20px] group shrink-0 overflow-hidden ${isActive
+        ? "bg-white border-white text-black"
         : "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.16)] text-[rgba(255,255,255,0.64)] hover:text-white/80"
         }`}
     >
-      <div className={`absolute inset-0 rounded-[8px] transition-opacity duration-300 pointer-events-none ${isActive ? "opacity-100" : "opacity-0"
-        }`}
-        style={{
-          background: "radial-gradient(50% 100% at 50% 0%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%)",
-        }} />
+      {/* Background/Backdrop blur on hover (Only for Default state) */}
+      {!isActive && (
+        <div
+          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[20px] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.047) 0%, rgba(255, 255, 255, 0.02) 100%)",
+          }}
+        />
+      )}
+
       <span className="relative z-10">{text}</span>
-      <div className={`absolute inset-0 rounded-[8px] pointer-events-none transition-opacity duration-300 ${isActive ? "opacity-100 shadow-[inset_0px_-1px_5px_0px_rgba(255,255,255,0.4)]" : "opacity-0"
-        }`} />
+
+      {/* State Transitions for Shadows and Glows */}
+      <div
+        className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${isActive
+          ? "opacity-100 shadow-[inset_0px_0px_8px_0px_rgba(255,255,255,0.48)]"
+          : "opacity-0 group-hover:opacity-100 shadow-[inset_0px_1px_12px_0px_rgba(255,255,255,0.12),inset_0px_1px_24px_6px_rgba(255,255,255,0.16)]"
+          }`}
+      />
     </button>
   );
 };
@@ -129,7 +141,7 @@ export default function TemplateSection({
 
         {/* Tab List & Pagination */}
         {showTabs && (
-          <div className="relative w-full flex items-center group">
+          <div className="relative w-full flex items-center">
             <div
               ref={scrollRef}
               className="flex gap-2 overflow-x-auto no-scrollbar py-3 w-full scroll-smooth"
@@ -174,10 +186,11 @@ export default function TemplateSection({
         {/* View All Overlay Button */}
         {!isExpanded && (
           <div className="absolute bottom-0 left-0 right-0 h-[200px] flex items-end justify-center pb-12 pointer-events-none z-20">
-            <img
-              src="http://localhost:3845/assets/6d98eec82c94c099c9cc5cab7ee5a544b9660235.png"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none"
+            <div
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{
+                background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 99%)"
+              }}
             />
             <button
               onClick={() => setIsExpanded(true)}

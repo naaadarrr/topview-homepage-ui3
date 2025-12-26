@@ -20,19 +20,7 @@ export default function Body() {
         </SectionWithTitle>
 
         {/* 3. Trusted By (Logo Wall replacement) */}
-        <SectionWithTitle
-          title="Loved by 1,000,000+ happy customers"
-          titleStyle={{
-            fontSize: "20px",
-            fontWeight: "500",
-            textAlign: "center",
-            color: "rgba(255, 255, 255, 0.50)",
-            lineHeight: "32px",
-            marginBottom: "32px",
-          }}
-        >
-          <TrustedBy />
-        </SectionWithTitle>
+        <TrustedBy />
 
         {/* 4. Template Sections */}
         <div className="flex flex-col gap-[48px] mt-[48px]">

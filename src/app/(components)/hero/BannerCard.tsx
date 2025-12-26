@@ -37,22 +37,7 @@ export default function BannerCard({
                 {/* Figma Overlay & Shadow for Pic */}
                 <div className="absolute inset-0 bg-[rgba(255,255,255,0.1)] border-[1.031px] border-[rgba(255,255,255,0.03)] border-solid rounded-[16px] pointer-events-none" />
 
-                {/* Text Overlay Content (SEEDANCE etc.) */}
-                {(overlayMainText || overlaySubText) && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-[4px] pointer-events-none px-12">
-                        {overlayMainText && (
-                            <h4
-                                className="font-['Outfit',sans-serif] font-extrabold text-[38px] text-white leading-tight text-center drop-shadow-[0px_2.06px_8.24px_rgba(0,0,0,0.25)] select-none"
-                                dangerouslySetInnerHTML={{ __html: overlayMainText }}
-                            />
-                        )}
-                        {overlaySubText && (
-                            <p className="font-['Outfit',sans-serif] font-light text-[12px] text-white/80 capitalize text-center drop-shadow-[0px_2.06px_8.24px_rgba(0,0,0,0.25)] select-none">
-                                {overlaySubText}
-                            </p>
-                        )}
-                    </div>
-                )}
+
             </div>
 
             {/* Bottom Content Area */}

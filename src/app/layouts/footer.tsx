@@ -1,15 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import LanguageModal from "../(components)/footer/LanguageModal";
 
-const imgFooterAccent = "http://localhost:3845/assets/e3483aeda6880cf1cf745c0aebd38a93bbaed835.svg";
-const imgLogoText = "http://localhost:3845/assets/85e96141385697c920ac821b75f9d1de68d4502e.svg";
-const imgLogoIcon = "http://localhost:3845/assets/10dbc82f710a75e9b5720403d1b683ad28dc4354.svg";
-const imgLine = "http://localhost:3845/assets/552134d5de522def3cdaac8c9270e392d2436eed.svg";
-const imgLogoBig = "http://localhost:3845/assets/6f970e4803249ccf25b76649d624574babaeaab5.svg";
-const imgLangFlag = "http://localhost:3845/assets/1d66e964688dc2fd6cb99c4968302110368a78b3.svg";
-const imgChevronDown = "http://localhost:3845/assets/72da21f3ab5c4b7125c64b955b3939b805d2b4ac.svg";
+const imgFooterAccent = "/bgFooter.png"; // Reusing bgFooter or keep as is if not used
+const imgLogoText = "/topview_logo.png";
+const imgLogoIcon = "/topview_logo.png";
+const imgLine = "/topview_logo.png"; // Placeholder
+const imgLogoBig = "/topview_logo.png";
+const imgLangFlag = "/默认.svg";
+const imgChevronDown = "/Dropdown icon copy.svg";
 
 const imgSocialX = "/social/Social Icons.svg";
 const imgSocialInstagram = "/social/Social Icons-1.svg";
@@ -44,15 +45,18 @@ const footerLinks = [
   },
 ];
 
-import LanguageModal from "../(components)/footer/LanguageModal";
-import { useState } from "react";
-
 export default function Footer() {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState("English");
 
   return (
     <footer className="relative w-full overflow-hidden bg-[#000000] pt-16">
+      <LanguageModal
+        isOpen={isLanguageModalOpen}
+        onClose={() => setIsLanguageModalOpen(false)}
+        currentLanguage={currentLanguage}
+        onSelect={setCurrentLanguage}
+      />
       {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none">
         <img
@@ -102,7 +106,7 @@ export default function Footer() {
               <div className="flex items-center gap-2 pt-1">
                 <div className="relative w-[132px] h-[26px]">
                   <img
-                    src="https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/topview_logo.png"
+                    src="/topview_logo.png"
                     alt="TopView"
                     className="block w-full h-auto"
                   />
@@ -166,20 +170,28 @@ export default function Footer() {
           </div>
 
           {/* Language Selector */}
-          <div
-            onClick={() => setIsLanguageModalOpen(true)}
-            className="flex items-center justify-center gap-2 w-[130px] h-[46px] bg-white/5 rounded-[12px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
+          <button
+            id="language-selector-btn"
+            onClick={(e) => {
+              console.log("Language selector clicked", e);
+              setIsLanguageModalOpen(true);
+            }}
+            className="flex items-center gap-[8px] px-[18px] py-[10px] bg-[rgba(255,255,255,0.16)] hover:bg-[rgba(255,255,255,0.24)] rounded-[12px] transition-all duration-300 group"
           >
-            <img src={imgLangFlag} alt="" className="w-6 h-6" />
-            <span className="text-white text-[14px] font-medium font-['Outfit',sans-serif]">{currentLanguage}</span>
-            <img src={imgChevronDown} alt="" className="w-2 h-1 ml-1" />
-          </div>
+            <div className="relative w-6 h-6">
+              <img src={imgLangFlag} alt="" className="block max-w-none size-full" />
+            </div>
+            <span className="text-white text-[14px] font-medium font-['Outfit',sans-serif] leading-[20px]">{currentLanguage}</span>
+            <div className="relative w-6 h-6 ml-0 opacity-80 group-hover:opacity-100 transition-opacity">
+              <img src="/Dropdown icon.svg" alt="" className="block max-w-none size-full brightness-0 invert" />
+            </div>
+          </button>
         </div>
 
         {/* Huge Bottom Logo - Implementing node 4406:1890 */}
         <div className="pt-24 pb-12 flex justify-center opacity-30 pointer-events-none select-none group">
           <img
-            src={imgLogoBig}
+            src="/TOPVIEW.svg"
             alt="TOPVIEW"
             className="w-full max-w-[1416px] h-auto object-contain block group-[.no-image]:hidden"
             onError={(e) => {
@@ -192,13 +204,6 @@ export default function Footer() {
           </span>
         </div>
       </div>
-
-      <LanguageModal
-        isOpen={isLanguageModalOpen}
-        onClose={() => setIsLanguageModalOpen(false)}
-        currentLanguage={currentLanguage}
-        onSelect={setCurrentLanguage}
-      />
     </footer>
   );
 }
