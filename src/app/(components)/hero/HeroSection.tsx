@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 
-const imgIcon = "http://localhost:3845/assets/899da8795051be2ad34036b4b534c961f2a053d4.svg";
-const imgDropdownArr = "http://localhost:3845/assets/41dbf2c8712cc95c2648fe0d5c370d4a07f3f3cd.svg";
-const imgUpload = "http://localhost:3845/assets/47935e4c4b9d27a16bfa5c78f5be6fec6ea9c1a0.svg";
-const imgVideo = "http://localhost:3845/assets/9a61e20563fc7ed00a29f82f703af8bdc90d9b37.svg";
-const imgSend = "http://localhost:3845/assets/093b9469662218e48c116efc1d3eee9576da1dff.svg";
+const imgIcon = "https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/icon.svg";
+const imgDropdownArr = "https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/dropdown_arr.svg";
+const imgUpload = "https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/upload.svg";
+const imgVideo = "https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/video.svg";
+const imgSend = "https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/send.svg";
 
 export default function HeroSection() {
     return (

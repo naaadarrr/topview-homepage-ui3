@@ -60,17 +60,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: schemaHome }}
         defer
       />
-      {/*   1.中间：文本 + 视频 */}
-      <section className="flex flex-col gap-0">
-        <HeroSection />
-        <VideoCarousel />
-        <TrustedBy />
-        <div className="flex flex-col gap-[48px]">
-          <TemplateSection />
-          <TemplateSection title="Avatar 4" showTabs={true} cardType="avatar" />
-          <TemplateSection title="Product Avatar" showTabs={true} cardType="avatar" />
-        </div>
-      </section>
+      <Body />
     </>
   );
 }

@@ -11,7 +11,6 @@ const assetHost = process.env.ASSET_HOST;
 const config = {
   // productionBrowserSourceMaps: true,
   // assetPrefix: "",
-  assetPrefix: isProd ? "https://topview-tools.vercel.app/" : "",
   output: "standalone",
   headers: async () => {
     return [
