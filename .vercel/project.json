@@ -1,15 +1,1 @@
-{
-  "projectId": "prj_Io4llvYE1Fyk2ynVxuUAFZhyKvJR",
-  "orgId": "V8b2e955YjZhfMY03t6gQXem",
-  "settings": {
-    "createdAt": 1708940212322,
-    "framework": "nextjs",
-    "devCommand": null,
-    "installCommand": null,
-    "buildCommand": null,
-    "outputDirectory": null,
-    "rootDirectory": null,
-    "directoryListing": false,
-    "nodeVersion": "18.x"
-  }
-}
+{"projectId":"prj_q2GZAMS46NBirsuytuBwEAunseD2","orgId":"team_4CmVdhroZxdsvbE8GwZmXF1N","projectName":"topview-tools"}

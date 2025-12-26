@@ -2,15 +2,15 @@
 
 import { prefixed } from "@/utils/media";
 interface CardItem {
-  id: number;
-  logo: string;
-  title: string;
-  subTitle: string;
-  imgUrl: string | null;
+    id: number;
+    logo: string;
+    title: string;
+    subTitle: string;
+    imgUrl: string | null;
 }
 
-const useSchemaScripts = () => {
-  const schemaHome = `
+const getSchemaScripts = () => {
+    const schemaHome = `
   [
     {
         "@context": "http://schema.org",
@@ -96,7 +96,7 @@ const useSchemaScripts = () => {
     }
 ]
   `;
-  const schemaAlternatives = `
+    const schemaAlternatives = `
   [
     {
         "@context": "http://schema.org",
@@ -183,34 +183,34 @@ const useSchemaScripts = () => {
 ]
   `;
 
-  return { schemaHome, schemaAlternatives };
+    return { schemaHome, schemaAlternatives };
 };
 
 export const prefixedCsr =
-  "https://d1735p3aqhycef.cloudfront.net/official-website/public";
+    "https://d1735p3aqhycef.cloudfront.net/official-website/public";
 
 export const cardList: CardItem[] = [
-  {
-    id: 0,
-    logo: `${prefixed("/tools/media_assets.png")}`,
-    title: "Your media assets",
-    subTitle: "Raw product videos/images",
-    imgUrl: null,
-  },
-  {
-    id: 1,
-    logo: `${prefixed("/tools/gpt_4.png")}`,
-    title: "GPT-4o",
-    subTitle: "Empowered by Ads library (4,300,000 top videos)",
-    imgUrl: null,
-  },
-  {
-    id: 2,
-    logo: `${prefixed("/tools/viral_videos.png")}`,
-    title: "Viral videos",
-    subTitle: "",
-    imgUrl: `${prefixed("/tools/videos_group_logo.png")}`,
-  },
+    {
+        id: 0,
+        logo: `${prefixed("/tools/media_assets.png")}`,
+        title: "Your media assets",
+        subTitle: "Raw product videos/images",
+        imgUrl: null,
+    },
+    {
+        id: 1,
+        logo: `${prefixed("/tools/gpt_4.png")}`,
+        title: "GPT-4o",
+        subTitle: "Empowered by Ads library (4,300,000 top videos)",
+        imgUrl: null,
+    },
+    {
+        id: 2,
+        logo: `${prefixed("/tools/viral_videos.png")}`,
+        title: "Viral videos",
+        subTitle: "",
+        imgUrl: `${prefixed("/tools/videos_group_logo.png")}`,
+    },
 ];
 
-export default useSchemaScripts;
+export default getSchemaScripts;

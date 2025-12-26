@@ -1,7 +1,7 @@
 import { Box, Center, Heading, Text } from "@chakra-ui/react";
 import { prefixed } from "@/utils/media";
 import { useTranslations } from "next-intl";
-import LogoWallImage from "./LogoWallImage";
+// import LogoWallImage from "./LogoWallImage";
 import CustomButtonContainer from "@/app/(_components)/Button/ContainerComponent";
 import AiAvatar from "@/app/[lang]/(desktop)/ai-avatar";
 import AiVideo from "@/app/[lang]/(desktop)/ai-video";
@@ -104,7 +104,7 @@ export default function Body() {
         </SectionWithTitle>
 
         {/* logo墙 */}
-        <SectionWithTitle
+        {/* <SectionWithTitle
           title={tLogoWall.raw("title")}
           titleStyle={{
             fontSize: "20px",
@@ -116,7 +116,7 @@ export default function Body() {
           }}
         >
           <LogoWallImage />
-        </SectionWithTitle>
+        </SectionWithTitle> */}
 
         {/* 用户案例视频 */}
         <SectionWithTitle

@@ -5,7 +5,7 @@ import Body from "./(components)/body/body";
 import VideoWall from "./(components)/videoWall";
 import SmallCardContainerWhite from "./(components)/card/smallCardContainerWhite";
 import SmallCardContainerBlack from "./(components)/card/smallCardContainerBlack";
-import useSchemaScripts from "./config";
+import getSchemaScripts from "./config";
 import HeroSection from "./(components)/hero/HeroSection";
 import VideoCarousel from "./(components)/hero/VideoCarousel";
 import TemplateSection from "./(components)/hero/TemplateSection";
@@ -51,7 +51,7 @@ export default async function Home() {
         "You can upload various types of media to TopviewAI, including images, videos, and audio files, to create engaging and personalized ads.",
     },
   ];
-  const { schemaHome } = useSchemaScripts();
+  const { schemaHome } = getSchemaScripts();
   return (
     <>
       <script
