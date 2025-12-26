@@ -69,10 +69,39 @@ export default function ResponsiveNavBar() {
           setIsMenuOpen={setIsMenuOpen}
         />
       ) : (
-        // PC版的Navbar
-        <div className="hidden xl:block">
-          <DesktopNav />
-        </div>
+        <>
+          {/* PC版的Navbar */}
+          <div className="hidden xl:block">
+            <DesktopNav />
+          </div>
+
+          {/* Mobile/Tablet Header */}
+          <div className="xl:hidden w-full h-[64px] flex justify-between items-center px-4 backdrop-blur-[25px] bg-[rgba(0,0,0,0.64)]">
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => (window.location.href = "/")}
+            >
+              <div className="relative w-[132px] h-[26px]">
+                <img
+                  alt="TopView"
+                  className="block w-full h-auto"
+                  src="https://d1735p3aqhycef.cloudfront.net/official-website/public/tools/topview_logo.png"
+                />
+              </div>
+            </div>
+
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              className="p-2 text-white"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </>
       )}
     </>
   );
