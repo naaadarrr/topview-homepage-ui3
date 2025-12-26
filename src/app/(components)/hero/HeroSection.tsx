@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const imgIcon = "/ai.png";
-const imgDropdownArr = "/Dropdown icon.svg";
+const imgDropdownArr = "/dropdown-icon.svg";
 const imgBgHero = "/bgHero.png";
 
 const SendIcon = ({ isActive }: { isActive: boolean }) => (

@@ -11,21 +11,21 @@ const defaultCategories = [
 ];
 
 const defaultTemplates = [
-  { title: "Explosion", image: "/Loading the media file....png", height: "h-[556px]" },
-  { title: "Melt Transition", image: "/Loading the media file...-1.png", height: "h-[494px]" },
-  { title: "Ahegao", image: "/Loading the media file...-2.png", height: "h-[274px]" },
-  { title: "Flame Transition", image: "/Loading the media file...-3.png", height: "h-[494px]" },
-  { title: "Train Rush", image: "/Loading the media file...-4.png", height: "h-[493px]" },
-  { title: "Splash Transition", image: "/Loading the media file...-5.png", height: "h-[494px]" },
-  { title: "Firelava", image: "/Loading the media file...-6.png", height: "h-[279px]" },
-  { title: "Flame On", image: "/Loading the media file...-7.png", height: "h-[278px]" },
-  { title: "Shadow Smoke", image: "/Loading the media file...-8.png", height: "h-[494px]" },
-  { title: "Earth Wave", image: "/Loading the media file...-9.png", height: "h-[208px]" },
-  { title: "Giant Grab", image: "/Loading the media file...-10.png", height: "h-[494px]" },
-  { title: "Earth Zoom Out", image: "/Loading the media file...-11.png", height: "h-[563px]" },
-  { title: "Raven Transition", image: "/Loading the media file...-12.png", height: "h-[494px]" },
-  { title: "Animalization", image: "/Loading the media file...-13.png", height: "h-[494px]" },
-  { title: "Air Bending", image: "/Loading the media file...-14.png", height: "h-[492px]" },
+  { title: "Explosion", image: "/template-0.png", height: "h-[556px]" },
+  { title: "Melt Transition", image: "/template-1.png", height: "h-[494px]" },
+  { title: "Ahegao", image: "/template-2.png", height: "h-[274px]" },
+  { title: "Flame Transition", image: "/template-3.png", height: "h-[494px]" },
+  { title: "Train Rush", image: "/template-4.png", height: "h-[493px]" },
+  { title: "Splash Transition", image: "/template-5.png", height: "h-[494px]" },
+  { title: "Firelava", image: "/template-6.png", height: "h-[279px]" },
+  { title: "Flame On", image: "/template-7.png", height: "h-[278px]" },
+  { title: "Shadow Smoke", image: "/template-8.png", height: "h-[494px]" },
+  { title: "Earth Wave", image: "/template-9.png", height: "h-[208px]" },
+  { title: "Giant Grab", image: "/template-10.png", height: "h-[494px]" },
+  { title: "Earth Zoom Out", image: "/template-11.png", height: "h-[563px]" },
+  { title: "Raven Transition", image: "/template-12.png", height: "h-[494px]" },
+  { title: "Animalization", image: "/template-13.png", height: "h-[494px]" },
+  { title: "Air Bending", image: "/template-14.png", height: "h-[492px]" },
 ];
 
 interface TabItemProps {

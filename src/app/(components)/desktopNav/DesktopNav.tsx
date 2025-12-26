@@ -18,7 +18,7 @@ const imgTopview =
 const imgIcon =
     "http://localhost:3845/assets/10dbc82f710a75e9b5720403d1b683ad28dc4354.svg";
 
-const imgChevron = "/Dropdown icon.svg";
+const imgChevron = "/dropdown-icon.svg";
 
 type SidebarUpgradeProps = {
     className?: string;
