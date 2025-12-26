@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const imgIcon = "/ai.png";
 const imgDropdownArr = "/dropdown-icon.svg";
-const imgBgHero = "/bgHero.png";
+const imgBgHero = "/bg-hero.png";
 
 const SendIcon = ({ isActive }: { isActive: boolean }) => (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-all duration-300">

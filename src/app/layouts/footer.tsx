@@ -12,11 +12,11 @@ const imgLogoBig = "/topview_logo.png";
 const imgLangFlag = "/默认.svg";
 const imgChevronDown = "/Dropdown icon copy.svg";
 
-const imgSocialX = "/social/Social Icons.svg";
-const imgSocialInstagram = "/social/Social Icons-1.svg";
-const imgSocialTiktok = "/social/Social Icons-3.svg";
-const imgSocialDiscord = "/social/Social Icons-4.svg";
-const imgSocialYoutube = "/social/Social Icons-2.svg";
+const imgSocialX = "/social/social-icon-0.svg";
+const imgSocialInstagram = "/social/social-icon-1.svg";
+const imgSocialTiktok = "/social/social-icon-3.svg";
+const imgSocialDiscord = "/social/social-icon-4.svg";
+const imgSocialYoutube = "/social/social-icon-2.svg";
 
 const footerLinks = [
   {
