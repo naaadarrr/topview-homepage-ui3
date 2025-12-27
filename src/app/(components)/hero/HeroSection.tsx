@@ -53,7 +53,7 @@ export default function HeroSection() {
     const [inputValue, setInputValue] = useState("");
 
     return (
-        <div className="relative w-full flex flex-col items-center pt-[64px] pb-[96px] px-4 overflow-hidden">
+        <div className="relative w-full flex flex-col items-center pt-[64px] pb-[96px] px-4 md:px-8 overflow-hidden">
             {/* Animated Background - 2s delay, 1.5s fade */}
             {/* Animated Background - 2s delay, 3s fade for silkier effect */}
             <motion.div

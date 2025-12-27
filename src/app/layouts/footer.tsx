@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import LanguageModal from "../(components)/footer/LanguageModal";
 
-const imgFooterAccent = "/bgFooter.png"; // Reusing bgFooter or keep as is if not used
-const imgLogoText = "/topview_logo.png";
-const imgLogoIcon = "/topview_logo.png";
-const imgLine = "/topview_logo.png"; // Placeholder
-const imgLogoBig = "/topview_logo.png";
-const imgLangFlag = "/默认.svg";
-const imgChevronDown = "/Dropdown icon copy.svg";
+const imgFooterAccent = "/bg-footer.png"; // Reusing bgFooter or keep as is if not used
+const imgLogoText = "/topview-logo.png";
+const imgLogoIcon = "/topview-logo.png";
+const imgLine = "/topview-logo.png"; // Placeholder
+const imgLogoBig = "/topview-logo.png";
+const imgLangFlag = "/language.svg";
+const imgChevronDown = "/dropdown-icon-copy.svg";
 
 const imgSocialX = "/social/social-icon-0.svg";
 const imgSocialInstagram = "/social/social-icon-1.svg";
@@ -191,7 +191,7 @@ export default function Footer() {
         {/* Huge Bottom Logo - Implementing node 4406:1890 */}
         <div className="pt-24 pb-12 flex justify-center opacity-30 pointer-events-none select-none group">
           <img
-            src="/TOPVIEW.svg"
+            src="/topview.svg"
             alt="TOPVIEW"
             className="w-full max-w-[1416px] h-auto object-contain block group-[.no-image]:hidden"
             onError={(e) => {
