@@ -5,11 +5,12 @@ interface SectionWithTitleProps {
     title?: string;
     titleStyle?: any;
     children: React.ReactNode;
+    px?: any;
 }
 
-export default function SectionWithTitle({ title, titleStyle, children }: SectionWithTitleProps) {
+export default function SectionWithTitle({ title, titleStyle, children, px }: SectionWithTitleProps) {
     return (
-        <Box w="100%" px={{ base: "16px", xl: "0" }} mt="0">
+        <Box w="100%" px={px !== undefined ? px : { base: "16px", xl: "0" }} mt="0">
             {title && (
                 <Heading
                     as="h2"

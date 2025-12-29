@@ -3,9 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const imgIcon = "/ai.png";
 const imgDropdownArr = "/dropdown-icon.svg";
-const imgBgHero = "/bg-hero.png";
 
 const SendIcon = ({ isActive }: { isActive: boolean }) => (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-all duration-300">
@@ -54,22 +52,6 @@ export default function HeroSection() {
 
     return (
         <div className="relative w-full flex flex-col items-center pt-[64px] pb-[96px] px-4 md:px-8 overflow-hidden">
-            {/* Animated Background - 2s delay, 1.5s fade */}
-            {/* Animated Background - 2s delay, 3s fade for silkier effect */}
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 2, duration: 3, ease: "easeInOut" }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-[1920px] h-[1080px] z-0 pointer-events-none"
-            >
-                {/* Aligned to top to match typical hero composition */}
-                <img
-                    src={imgBgHero}
-                    alt=""
-                    className="w-full h-full object-cover"
-                />
-            </motion.div>
-
             {/* Badge */}
             <div className="relative z-10 mb-[24px]">
                 <div
@@ -89,7 +71,7 @@ export default function HeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="relative z-10 text-[48px] leading-[60px] font-bold text-white text-center font-['Outfit',sans-serif] mb-[48px] tracking-tight">
+            <h1 className="relative z-10 text-[48px] leading-[60px] font-bold text-white text-center font-['Outfit',sans-serif] mb-0 tracking-tight">
                 Create Any Video,  Just Tell Your Agent
             </h1>
 

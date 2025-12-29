@@ -70,13 +70,13 @@ export default function ResponsiveNavBar() {
         />
       ) : (
         <>
-          {/* PC版的Navbar */}
-          <div className="hidden lg:block">
+          {/* PC版的Navbar - Show only at ≥1200px */}
+          <div className="hidden nav:block">
             <DesktopNav />
           </div>
 
-          {/* Mobile/Tablet Header */}
-          <div className="lg:hidden w-full h-[64px] flex justify-between items-center px-4 backdrop-blur-[25px] bg-[rgba(0,0,0,0.64)]">
+          {/* Mobile/Tablet Header - Show at <1200px */}
+          <div className="nav:hidden w-full h-[64px] flex justify-between items-center px-4 backdrop-blur-[25px] bg-[rgba(0,0,0,0.64)]">
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => (window.location.href = "/")}

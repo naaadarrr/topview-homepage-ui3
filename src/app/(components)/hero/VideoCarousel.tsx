@@ -57,7 +57,7 @@ export default function VideoCarousel() {
   return (
     <div className="w-full pb-[96px] pt-0 overflow-hidden flex flex-col items-start px-0 relative">
       <div className="w-full relative overflow-x-auto no-scrollbar scroll-smooth">
-        <div className="flex gap-[20px] items-center pl-[32px] pr-[32px] py-0 w-max">
+        <div className="flex gap-[20px] items-center pl-[32px] pr-0 py-0 w-max">
           {carouselItems.map((item, index) => (
             <BannerCard
               key={index}

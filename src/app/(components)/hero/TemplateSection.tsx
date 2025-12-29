@@ -106,6 +106,7 @@ const CarouselArrow = ({ direction, disabled, onClick }: ArrowProps) => {
 
 interface TemplateSectionProps {
   title?: string;
+  description?: string;
   showTabs?: boolean;
   cardType?: "default" | "avatar";
   templates?: { title: string; image: string; height: string }[];
@@ -114,6 +115,7 @@ interface TemplateSectionProps {
 
 export default function TemplateSection({
   title = "Video Agent Templates",
+  description,
   showTabs = true,
   cardType = "default",
   templates = defaultTemplates,
@@ -132,39 +134,44 @@ export default function TemplateSection({
   };
 
   return (
-    <section className="w-full flex flex-col items-center py-0 gap-6 overflow-hidden px-4 md:px-8">
+    <section className="w-full flex flex-col items-center py-0 gap-4 overflow-hidden px-4 md:px-8">
       {/* Header */}
-      <div className="flex flex-col items-center gap-2 w-full max-w-[1856px]">
+      <div className="flex flex-col items-center gap-1 w-full max-w-[1856px]">
         <h2 className="text-[36px] font-['Outfit',sans-serif] font-extrabold text-white text-center">
           {title}
         </h2>
-
-        {/* Tab List & Pagination */}
-        {showTabs && (
-          <div className="relative w-full flex items-center">
-            <div
-              ref={scrollRef}
-              className="flex gap-2 overflow-x-auto no-scrollbar py-3 w-full scroll-smooth"
-            >
-              {defaultCategories.map((cat) => (
-                <TabItem
-                  key={cat}
-                  text={cat}
-                  isActive={activeCategory === cat}
-                  onClick={() => setActiveCategory(cat)}
-                />
-              ))}
-            </div>
-
-            <div className="absolute right-0 top-0 bottom-0 flex items-center pl-24 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
-              <div className="flex gap-2.5 pointer-events-auto py-2 pr-0 pl-4">
-                <CarouselArrow direction="left" onClick={() => scroll("left")} />
-                <CarouselArrow direction="right" onClick={() => scroll("right")} />
-              </div>
-            </div>
-          </div>
+        {description && (
+          <p className="text-[16px] font-['Outfit',sans-serif] font-normal leading-[24px] text-[rgba(255,255,255,0.36)] text-center">
+            {description}
+          </p>
         )}
       </div>
+
+      {/* Tab List & Pagination */}
+      {showTabs && (
+        <div className="relative w-full flex items-center">
+          <div
+            ref={scrollRef}
+            className="flex gap-2 overflow-x-auto no-scrollbar py-3 w-full scroll-smooth"
+          >
+            {defaultCategories.map((cat) => (
+              <TabItem
+                key={cat}
+                text={cat}
+                isActive={activeCategory === cat}
+                onClick={() => setActiveCategory(cat)}
+              />
+            ))}
+          </div>
+
+          <div className="absolute right-0 top-0 bottom-0 flex items-center pl-24 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
+            <div className="flex gap-2.5 pointer-events-auto py-2 pr-0 pl-4">
+              <CarouselArrow direction="left" onClick={() => scroll("left")} />
+              <CarouselArrow direction="right" onClick={() => scroll("right")} />
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Grid container with controlled height */}
       <div className={`relative w-full max-w-[1856px] transition-all duration-700 ease-in-out ${isExpanded ? "max-h-[5000px]" : "max-h-[1000px] overflow-hidden"
@@ -217,6 +224,6 @@ export default function TemplateSection({
           </div>
         )}
       </div>
-    </section>
+    </section >
   );
 }

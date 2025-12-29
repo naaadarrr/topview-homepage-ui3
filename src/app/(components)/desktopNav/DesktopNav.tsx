@@ -137,7 +137,7 @@ export default function DesktopNav() {
             </div>
 
             {/* 中间菜单 */}
-            <div className="flex items-center justify-center gap-[4px]">
+            <div className="flex items-center justify-center gap-[0px]">
                 {menuItems.map((item) => {
                     const isActive = item.name === "AI tools" && isMenuOpen;
                     return (
@@ -149,11 +149,11 @@ export default function DesktopNav() {
                                 }
                             }}
                             className={`
-                                group flex items-center gap-[4px] px-[16px] py-[8px] cursor-pointer rounded-full transition-all
+                                group flex items-center gap-[4px] px-[16px] py-[8px] cursor-pointer rounded-full transition-all whitespace-nowrap
                                 ${isActive ? "bg-[rgba(255,255,255,0.16)] text-white" : "text-[rgba(255,255,255,0.64)] hover:bg-[rgba(255,255,255,0.16)] hover:text-white"}
                             `}
                         >
-                            <span className="text-[16px] font-normal font-['Outfit',sans-serif] leading-[24px] transition-colors">
+                            <span className="text-[16px] font-normal font-['Outfit',sans-serif] leading-[24px] transition-colors whitespace-nowrap">
                                 {item.name}
                             </span>
                             {item.hasIcon && (

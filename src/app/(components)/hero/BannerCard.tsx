@@ -26,17 +26,13 @@ export default function BannerCard({
             className={`flex flex-col items-start relative rounded-[16px] overflow-hidden transition-all duration-300 shrink-0 group cursor-pointer hover:bg-[rgba(255,255,255,0.08)] ${className}`}
         >
             {/* Thumbnail Area with Text Overlay - Added rounded-[16px] for 4-corner rounding */}
-            <div className="relative w-[528px] h-[297px] rounded-[16px] overflow-hidden backdrop-blur-[2.063px] backdrop-filter">
+            <div className="relative w-[480px] h-[270px] rounded-[16px] overflow-hidden backdrop-blur-[2.063px] backdrop-filter">
                 {/* Background Image */}
                 <img
                     src={image}
                     alt={title}
                     className="absolute inset-0 w-full h-full object-cover"
                 />
-
-                {/* Figma Overlay & Shadow for Pic */}
-                <div className="absolute inset-0 bg-[rgba(255,255,255,0.1)] border-[1.031px] border-[rgba(255,255,255,0.03)] border-solid rounded-[16px] pointer-events-none" />
-
 
             </div>
 
