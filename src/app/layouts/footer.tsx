@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import LanguageModal from "../(components)/footer/LanguageModal";
 
-const imgFooterAccent = "/bg-footer.png"; // Reusing bgFooter or keep as is if not used
+const imgFooterAccent = "/bgFooter.png"; // Reusing bgFooter or keep as is if not used
 const imgLogoText = "/topview-logo.png";
 const imgLogoIcon = "/topview-logo.png";
 const imgLine = "/topview-logo.png"; // Placeholder
@@ -191,7 +191,7 @@ export default function Footer() {
         {/* Huge Bottom Logo - Implementing node 4406:1890 */}
         <div className="pt-24 pb-12 flex justify-center opacity-30 pointer-events-none select-none group">
           <img
-            src="/topview.svg"
+            src="/TOPVIEW.svg"
             alt="TOPVIEW"
             className="w-full max-w-[1416px] h-auto object-contain block group-[.no-image]:hidden"
             onError={(e) => {
