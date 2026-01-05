@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import LanguageModal from "../(components)/footer/LanguageModal";
 
-const imgFooterAccent = "/bgFooter.png"; // Reusing bgFooter or keep as is if not used
-const imgLogoText = "/topview-logo.png";
-const imgLogoIcon = "/topview-logo.png";
-const imgLine = "/topview-logo.png"; // Placeholder
-const imgLogoBig = "/topview-logo.png";
-const imgLangFlag = "/language.svg";
-const imgChevronDown = "/dropdown-icon-copy.svg";
+const imgFooterAccent = "/images/bgFooter.png"; // Reusing bgFooter or keep as is if not used
+const imgLogoText = "/branding/topview_logo.png";
+const imgLogoIcon = "/branding/topview_logo.png";
+const imgLine = "/branding/topview_logo.png"; // Placeholder
+const imgLogoBig = "/branding/topview_logo.png";
+const imgLangFlag = "/icons/language.svg";
+const imgChevronDown = "/icons/dropdown-icon-copy.svg";
 
 const imgSocialX = "/icons/social-icon-0.svg";
 const imgSocialInstagram = "/icons/social-icon-1.svg";
