@@ -7,7 +7,11 @@ const defaultCategories = [
   "All", "Nutra", "Beauty", "Health", "Wellness", "Fitness", "Nutrition",
   "Skincare", "Makeup", "Haircare", "Self-Care", "Meditation", "Mindfulness",
   "Wellbeing", "Fashion", "Lifestyle", "Cosmetics", "Hygiene", "Aromatherapy",
-  "Gaming", "Travel", "Food", "Tech", "Cars", "Music", "Art", "Design", "Nature", "Business"
+  "Gaming", "Travel", "Food", "Tech", "Cars", "Music", "Art", "Design", "Nature", "Business",
+  "Education", "Shopping", "Finance", "Social", "Entertainment", "Sports", "News", "Health",
+  "Productivity", "Photography", "Video", "Books", "Reference", "Utilities", "Weather",
+  "Cooking", "Baking", "Architecture", "History", "Science", "Space", "Animals", "Pets",
+  "DIY", "Gardening", "Home", "Family", "Relationships", "Kids", "Toys", "Games"
 ];
 
 const defaultTemplates = [
@@ -126,13 +130,12 @@ export default function TemplateSection({
 
       {/* Tab List & Pagination */}
       {showTabs && (
-        <div className={`relative w-full flex flex-col gap-4 max-w-[1856px]`}>
-          <div className="relative w-full flex items-center">
+        <div className={`relative w-full max-w-[1856px] transition-[height] duration-500 ease-in-out ${isTabsExpanded ? "h-[160px]" : "h-[52px]"}`}>
+          <div className="relative w-full h-full">
+            {/* Collapsed View (Scroll) */}
             <div
               ref={scrollRef}
-              className={`flex gap-2 py-3 w-full pr-14 ${isTabsExpanded
-                ? "flex-wrap overflow-visible justify-start"
-                : "overflow-x-auto no-scrollbar scroll-smooth"
+              className={`absolute inset-0 flex gap-2 py-3 w-full pr-14 overflow-x-auto no-scrollbar scroll-smooth transition-opacity duration-300 ${isTabsExpanded ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
             >
               {defaultCategories.map((cat) => (
@@ -145,6 +148,22 @@ export default function TemplateSection({
               ))}
             </div>
 
+            {/* Expanded View (Grid) */}
+            <div
+              className={`absolute inset-0 flex gap-2 py-3 w-full pr-14 flex-wrap justify-start transition-opacity duration-300 ${isTabsExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
+                }`}
+            >
+              {defaultCategories.map((cat) => (
+                <TabItem
+                  key={cat}
+                  text={cat}
+                  isActive={activeCategory === cat}
+                  onClick={() => setActiveCategory(cat)}
+                />
+              ))}
+            </div>
+
+            {/* Shared Toggle Button Area */}
             <div className="absolute right-0 top-0 h-[52px] flex items-center z-20 pointer-events-none">
               <div className={`h-full w-32 bg-gradient-to-l from-black via-black/80 to-transparent transition-opacity duration-300 ${isTabsExpanded ? "opacity-0" : "opacity-100"}`} />
               <div className={`h-full flex items-center pr-0 pl-2 pointer-events-auto transition-all duration-300 ${isTabsExpanded ? "bg-transparent" : "bg-black"}`}>
