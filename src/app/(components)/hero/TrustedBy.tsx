@@ -3,17 +3,17 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "/logo-item-01.svg",
-  "/logo-item-02.svg",
-  "/logo-item-03.svg",
-  "/logo-item-04.svg",
-  "/logo-item-05.svg",
-  "/logo-item-06.svg",
-  "/logo-item-07.svg",
-  "/logo-item-08.svg",
-  "/logo-item-09.svg",
-  "/logo-item-10.svg",
-  "/logo-item-11.svg",
+  "/branding/logo-item-01.svg",
+  "/branding/logo-item-02.svg",
+  "/branding/logo-item-03.svg",
+  "/branding/logo-item-04.svg",
+  "/branding/logo-item-05.svg",
+  "/branding/logo-item-06.svg",
+  "/branding/logo-item-07.svg",
+  "/branding/logo-item-08.svg",
+  "/branding/logo-item-09.svg",
+  "/branding/logo-item-10.svg",
+  "/branding/logo-item-11.svg",
 ];
 
 export default function TrustedBy() {

@@ -2,10 +2,10 @@
 import React from "react";
 import BannerCard from "./BannerCard";
 
-const imgFigure = "/Figure.png";
-const imgFigure1 = "/Figure-1.png";
-const imgFigure2 = "/Figure-2.png";
-const imgFigure3 = "/Figure-3.png";
+const imgFigure = "/hero/Figure.png";
+const imgFigure1 = "/hero/Figure-1.png";
+const imgFigure2 = "/hero/Figure-2.png";
+const imgFigure3 = "/hero/Figure-3.png";
 
 const carouselItems = [
   {

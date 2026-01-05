@@ -15,21 +15,21 @@ const defaultCategories = [
 ];
 
 const defaultTemplates = [
-  { title: "Explosion", image: "/template-0.png", aspect: "aspect-[360/556]" },
-  { title: "Melt Transition", image: "/template-1.png", aspect: "aspect-[360/494]" },
-  { title: "Ahegao", image: "/template-2.png", aspect: "aspect-[360/274]" },
-  { title: "Flame Transition", image: "/template-3.png", aspect: "aspect-[360/494]" },
-  { title: "Train Rush", image: "/template-4.png", aspect: "aspect-[360/493]" },
-  { title: "Splash Transition", image: "/template-5.png", aspect: "aspect-[360/494]" },
-  { title: "Firelava", image: "/template-6.png", aspect: "aspect-[360/279]" },
-  { title: "Flame On", image: "/template-7.png", aspect: "aspect-[360/278]" },
-  { title: "Shadow Smoke", image: "/template-8.png", aspect: "aspect-[360/494]" },
-  { title: "Earth Wave", image: "/template-9.png", aspect: "aspect-[360/208]" },
-  { title: "Giant Grab", image: "/template-10.png", aspect: "aspect-[360/494]" },
-  { title: "Earth Zoom Out", image: "/template-11.png", aspect: "aspect-[360/563]" },
-  { title: "Raven Transition", image: "/template-12.png", aspect: "aspect-[360/494]" },
-  { title: "Animalization", image: "/template-13.png", aspect: "aspect-[360/494]" },
-  { title: "Air Bending", image: "/template-14.png", aspect: "aspect-[360/492]" },
+  { title: "Explosion", image: "/templates/template-0.png", aspect: "aspect-[360/556]" },
+  { title: "Melt Transition", image: "/templates/template-1.png", aspect: "aspect-[360/494]" },
+  { title: "Ahegao", image: "/templates/template-2.png", aspect: "aspect-[360/274]" },
+  { title: "Flame Transition", image: "/templates/template-3.png", aspect: "aspect-[360/494]" },
+  { title: "Train Rush", image: "/templates/template-4.png", aspect: "aspect-[360/493]" },
+  { title: "Splash Transition", image: "/templates/template-5.png", aspect: "aspect-[360/494]" },
+  { title: "Firelava", image: "/templates/template-6.png", aspect: "aspect-[360/279]" },
+  { title: "Flame On", image: "/templates/template-7.png", aspect: "aspect-[360/278]" },
+  { title: "Shadow Smoke", image: "/templates/template-8.png", aspect: "aspect-[360/494]" },
+  { title: "Earth Wave", image: "/templates/template-9.png", aspect: "aspect-[360/208]" },
+  { title: "Giant Grab", image: "/templates/template-10.png", aspect: "aspect-[360/494]" },
+  { title: "Earth Zoom Out", image: "/templates/template-11.png", aspect: "aspect-[360/563]" },
+  { title: "Raven Transition", image: "/templates/template-12.png", aspect: "aspect-[360/494]" },
+  { title: "Animalization", image: "/templates/template-13.png", aspect: "aspect-[360/494]" },
+  { title: "Air Bending", image: "/templates/template-14.png", aspect: "aspect-[360/492]" },
 ];
 
 interface TabItemProps {

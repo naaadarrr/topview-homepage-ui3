@@ -8,7 +8,7 @@ import VideoCarousel from "@/app/(components)/hero/VideoCarousel";
 import TrustedBy from "@/app/(components)/hero/TrustedBy";
 import TemplateSection from "@/app/(components)/hero/TemplateSection";
 
-const imgBgHero = "/bg-hero.png";
+const imgBgHero = "/hero/bg-hero.png";
 
 export default function Body() {
   return (
