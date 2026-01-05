@@ -165,7 +165,7 @@ export default function TemplateSection({
 
             {/* Shared Toggle Button Area */}
             <div className="absolute right-0 top-0 h-[56px] flex items-center z-20 pointer-events-none">
-              <div className={`h-full w-32 bg-gradient-to-l from-black via-black/80 to-transparent transition-opacity duration-300 ${isTabsExpanded ? "opacity-0" : "opacity-100"}`} />
+              <div className={`h-full w-20 bg-gradient-to-l from-black via-black/80 to-transparent transition-opacity duration-300 ${isTabsExpanded ? "opacity-0" : "opacity-100"}`} />
               <div className={`h-full flex items-center pr-0 pl-2 pointer-events-auto transition-[background-color] duration-300 ${isTabsExpanded ? "bg-transparent" : "bg-black"}`}>
                 <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(!isTabsExpanded)} />
               </div>
