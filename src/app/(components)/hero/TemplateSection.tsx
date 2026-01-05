@@ -15,21 +15,21 @@ const defaultCategories = [
 ];
 
 const defaultTemplates = [
-  { title: "Explosion", image: "/template-0.png", height: "h-[556px]" },
-  { title: "Melt Transition", image: "/template-1.png", height: "h-[494px]" },
-  { title: "Ahegao", image: "/template-2.png", height: "h-[274px]" },
-  { title: "Flame Transition", image: "/template-3.png", height: "h-[494px]" },
-  { title: "Train Rush", image: "/template-4.png", height: "h-[493px]" },
-  { title: "Splash Transition", image: "/template-5.png", height: "h-[494px]" },
-  { title: "Firelava", image: "/template-6.png", height: "h-[279px]" },
-  { title: "Flame On", image: "/template-7.png", height: "h-[278px]" },
-  { title: "Shadow Smoke", image: "/template-8.png", height: "h-[494px]" },
-  { title: "Earth Wave", image: "/template-9.png", height: "h-[208px]" },
-  { title: "Giant Grab", image: "/template-10.png", height: "h-[494px]" },
-  { title: "Earth Zoom Out", image: "/template-11.png", height: "h-[563px]" },
-  { title: "Raven Transition", image: "/template-12.png", height: "h-[494px]" },
-  { title: "Animalization", image: "/template-13.png", height: "h-[494px]" },
-  { title: "Air Bending", image: "/template-14.png", height: "h-[492px]" },
+  { title: "Explosion", image: "/template-0.png", aspect: "aspect-[360/556]" },
+  { title: "Melt Transition", image: "/template-1.png", aspect: "aspect-[360/494]" },
+  { title: "Ahegao", image: "/template-2.png", aspect: "aspect-[360/274]" },
+  { title: "Flame Transition", image: "/template-3.png", aspect: "aspect-[360/494]" },
+  { title: "Train Rush", image: "/template-4.png", aspect: "aspect-[360/493]" },
+  { title: "Splash Transition", image: "/template-5.png", aspect: "aspect-[360/494]" },
+  { title: "Firelava", image: "/template-6.png", aspect: "aspect-[360/279]" },
+  { title: "Flame On", image: "/template-7.png", aspect: "aspect-[360/278]" },
+  { title: "Shadow Smoke", image: "/template-8.png", aspect: "aspect-[360/494]" },
+  { title: "Earth Wave", image: "/template-9.png", aspect: "aspect-[360/208]" },
+  { title: "Giant Grab", image: "/template-10.png", aspect: "aspect-[360/494]" },
+  { title: "Earth Zoom Out", image: "/template-11.png", aspect: "aspect-[360/563]" },
+  { title: "Raven Transition", image: "/template-12.png", aspect: "aspect-[360/494]" },
+  { title: "Animalization", image: "/template-13.png", aspect: "aspect-[360/494]" },
+  { title: "Air Bending", image: "/template-14.png", aspect: "aspect-[360/492]" },
 ];
 
 interface TabItemProps {
@@ -76,19 +76,19 @@ const TabItem = ({ text, isActive, onClick }: TabItemProps) => {
 interface TemplateSectionProps {
   title?: string;
   description?: string;
+  templates?: { title: string; image: string; aspect: string }[];
   showTabs?: boolean;
-  cardType?: "default" | "avatar";
-  templates?: { title: string; image: string; height: string }[];
   aspectRatio?: string;
+  cardType?: "video" | "avatar";
 }
 
 export default function TemplateSection({
   title = "Video Agent Templates",
   description,
-  showTabs = true,
-  cardType = "default",
   templates = defaultTemplates,
-  aspectRatio
+  showTabs = false,
+  aspectRatio,
+  cardType = "video",
 }: TemplateSectionProps) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [isExpanded, setIsExpanded] = useState(false);
@@ -180,11 +180,11 @@ export default function TemplateSection({
         {/* Masonry-like grid using columns - Support ultra-wide screens */}
         <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 2xl:columns-6 3xl:columns-8 gap-2 [column-fill:_balance]">
           {templates.map((template, idx) => (
-            <div key={idx} className={`break-inside-avoid mb-2 ${template.height}`}>
+            <div key={idx} className="break-inside-avoid mb-2">
               <TemplateCard
                 image={template.image}
                 title={template.title}
-                aspectRatio={aspectRatio}
+                aspectRatio={template.aspect}
                 hideTitle={cardType === "avatar"}
               />
             </div>
