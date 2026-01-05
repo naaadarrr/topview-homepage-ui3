@@ -86,7 +86,7 @@ export default function TemplateSection({
   title = "Video Agent Templates",
   description,
   templates = defaultTemplates,
-  showTabs = false,
+  showTabs = true,
   aspectRatio,
   cardType = "video",
 }: TemplateSectionProps) {
