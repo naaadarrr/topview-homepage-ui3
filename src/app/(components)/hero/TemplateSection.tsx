@@ -130,12 +130,12 @@ export default function TemplateSection({
 
       {/* Tab List & Pagination */}
       {showTabs && (
-        <div className={`relative w-full max-w-[1856px] transition-[height] duration-500 ease-in-out ${isTabsExpanded ? "h-[160px]" : "h-[52px]"}`}>
-          <div className="relative w-full h-full">
+        <div className={`relative w-full max-w-[1856px] transition-[height] duration-500 ease-in-out ${isTabsExpanded ? "h-[148px]" : "h-[52px]"}`}>
+          <div className="relative w-full h-full overflow-hidden">
             {/* Collapsed View (Scroll) */}
             <div
               ref={scrollRef}
-              className={`absolute inset-0 flex gap-2 py-3 w-full pr-14 overflow-x-auto no-scrollbar scroll-smooth transition-opacity duration-300 ${isTabsExpanded ? "opacity-0 pointer-events-none" : "opacity-100"
+              className={`absolute inset-0 flex items-start gap-2 py-3 w-full pr-14 overflow-x-auto no-scrollbar scroll-smooth transition-opacity duration-300 ${isTabsExpanded ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
             >
               {defaultCategories.map((cat) => (
@@ -150,7 +150,7 @@ export default function TemplateSection({
 
             {/* Expanded View (Grid) */}
             <div
-              className={`absolute inset-0 flex gap-2 py-3 w-full pr-14 flex-wrap justify-start transition-opacity duration-300 ${isTabsExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
+              className={`absolute inset-0 flex items-start gap-2 py-3 w-full pr-14 flex-wrap justify-start transition-opacity duration-300 ${isTabsExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
                 }`}
             >
               {defaultCategories.map((cat) => (
