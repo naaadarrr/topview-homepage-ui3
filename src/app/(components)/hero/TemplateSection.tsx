@@ -131,7 +131,7 @@ export default function TemplateSection({
             <div
               ref={scrollRef}
               className={`flex gap-2 py-3 w-full transition-all duration-300 ${isTabsExpanded
-                ? "flex-wrap overflow-visible justify-center"
+                ? "flex-wrap overflow-visible justify-start"
                 : "overflow-x-auto no-scrollbar scroll-smooth"
                 }`}
             >
@@ -145,9 +145,9 @@ export default function TemplateSection({
               ))}
             </div>
 
-            <div className={`absolute right-0 pr-0 z-20 pointer-events-none transition-all duration-300 ${isTabsExpanded ? "top-3" : "top-0 bottom-0 flex items-center pl-16 bg-gradient-to-l from-black via-black to-transparent"
-              }`}>
-              <div className={`flex gap-2.5 pointer-events-auto pr-0 ${isTabsExpanded ? "" : "py-2 pl-4"}`}>
+            <div className="absolute right-0 top-0 h-[52px] flex items-center z-20 pointer-events-none">
+              <div className="h-full w-32 bg-gradient-to-l from-[#000000] via-[#000000]/80 to-transparent" />
+              <div className="bg-[#000000] h-full flex items-center pr-0 pl-2 pointer-events-auto">
                 <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(!isTabsExpanded)} />
               </div>
             </div>
