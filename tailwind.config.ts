@@ -11,6 +11,7 @@ export default {
       'nav': '1024px',  // Custom breakpoint for navigation
       'xl': '1280px',
       '2xl': '1536px',
+      '3xl': '1920px',
     },
     extend: {
       fontFamily: {
