@@ -12,11 +12,11 @@ const imgLogoBig = "/topview-logo.png";
 const imgLangFlag = "/language.svg";
 const imgChevronDown = "/dropdown-icon-copy.svg";
 
-const imgSocialX = "/social/social-icon-0.svg";
-const imgSocialInstagram = "/social/social-icon-1.svg";
-const imgSocialTiktok = "/social/social-icon-3.svg";
-const imgSocialDiscord = "/social/social-icon-4.svg";
-const imgSocialYoutube = "/social/social-icon-2.svg";
+const imgSocialX = "/icons/social-icon-0.svg";
+const imgSocialInstagram = "/icons/social-icon-1.svg";
+const imgSocialTiktok = "/icons/social-icon-3.svg";
+const imgSocialDiscord = "/icons/social-icon-4.svg";
+const imgSocialYoutube = "/icons/social-icon-2.svg";
 
 const footerLinks = [
   {
