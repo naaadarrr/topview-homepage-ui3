@@ -115,14 +115,14 @@ export default function TemplateSection({
   };
 
   return (
-    <section className="w-full flex flex-col items-center py-0 gap-4 overflow-hidden px-4 md:px-8">
+    <section className="w-full flex flex-col items-start py-0 gap-4 overflow-hidden px-8">
       {/* Header */}
-      <div className="flex flex-col items-center gap-1 w-full max-w-[1856px]">
-        <h2 className="text-[36px] font-['Outfit',sans-serif] font-extrabold text-white text-center">
+      <div className="flex flex-col items-start gap-1 w-full">
+        <h2 className="text-[36px] font-['Outfit',sans-serif] font-extrabold text-white text-left">
           {title}
         </h2>
         {description && (
-          <p className="text-[14px] font-['Outfit',sans-serif] font-normal leading-[20px] text-[rgba(255,255,255,0.36)] text-center">
+          <p className="text-[14px] font-['Outfit',sans-serif] font-normal leading-[20px] text-[rgba(255,255,255,0.36)] text-left">
             {description}
           </p>
         )}
@@ -130,7 +130,7 @@ export default function TemplateSection({
 
       {/* Tab List & Pagination */}
       {showTabs && (
-        <div className={`relative w-full max-w-[1856px] transition-[height] duration-300 ease-in-out ${isTabsExpanded ? "h-[136px]" : "h-[56px]"}`}>
+        <div className={`relative w-full transition-[height] duration-300 ease-in-out ${isTabsExpanded ? "h-[136px]" : "h-[56px]"}`}>
           <div className="relative w-full h-full overflow-hidden">
             {/* Collapsed View (Scroll) */}
             <div
@@ -175,10 +175,10 @@ export default function TemplateSection({
       )}
 
       {/* Grid container with controlled height */}
-      <div className={`relative w-full max-w-[1856px] transition-all duration-700 ease-in-out ${isExpanded ? "max-h-[5000px]" : "max-h-[1000px] overflow-hidden"
+      <div className={`relative w-full transition-all duration-700 ease-in-out ${isExpanded ? "max-h-[5000px]" : "max-h-[1000px] overflow-hidden"
         }`}>
-        {/* Masonry-like grid using columns - Fixed gap to 8px (gap-2) */}
-        <div className={`columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-2`}>
+        {/* Masonry-like grid using columns - Support ultra-wide screens */}
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 2xl:columns-6 3xl:columns-8 gap-2 [column-fill:_balance]">
           {templates.map((template, idx) => (
             <div key={idx} className={`break-inside-avoid mb-2 ${template.height}`}>
               <TemplateCard
