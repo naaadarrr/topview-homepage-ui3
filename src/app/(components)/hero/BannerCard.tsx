@@ -71,7 +71,7 @@ export default function BannerCard({
                 </div>
 
                 {/* Hover Arrow Icon */}
-                <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full bg-white/5 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                <div className="flex items-center justify-center w-[32px] h-[32px] rounded-full opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
                     <svg
                         width="20"
                         height="20"
