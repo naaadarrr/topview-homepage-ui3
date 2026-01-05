@@ -25,7 +25,7 @@ export default function TabItem({
                 onClick={onClick}
                 className={`${baseClasses} bg-white border border-white/64 ${className}`}
             >
-                <span className="font-['Outfit',sans-serif] font-medium text-[12px] leading-[20px] text-black">
+                <span className="font-['Outfit',sans-serif] font-medium text-[14px] leading-[20px] text-black">
                     {text}
                 </span>
             </button>
@@ -41,7 +41,7 @@ export default function TabItem({
                     backgroundImage: "linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 100%), linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)"
                 }}
             >
-                <span className="font-['Outfit',sans-serif] font-medium text-[12px] leading-[20px] text-white/64">
+                <span className="font-['Outfit',sans-serif] font-medium text-[14px] leading-[20px] text-white/64">
                     {text}
                 </span>
 
@@ -57,7 +57,7 @@ export default function TabItem({
             onClick={onClick}
             className={`${baseClasses} bg-white/3 border border-white/16 hover:bg-white/5 ${className}`}
         >
-            <span className="font-['Outfit',sans-serif] font-medium text-[12px] leading-[20px] text-white/64">
+            <span className="font-['Outfit',sans-serif] font-medium text-[14px] leading-[20px] text-white/64">
                 {text}
             </span>
         </button>
