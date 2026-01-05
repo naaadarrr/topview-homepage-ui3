@@ -5,8 +5,6 @@ type BannerCardProps = {
     title: string;
     description: string;
     image: string;
-    overlayMainText?: string;
-    overlaySubText?: string;
     className?: string;
     onClick?: () => void;
     size?: 'default' | 'small';
@@ -16,8 +14,6 @@ export default function BannerCard({
     title,
     description,
     image,
-    overlayMainText,
-    overlaySubText,
     className = "",
     onClick,
     size = 'default'
@@ -29,34 +25,14 @@ export default function BannerCard({
             onClick={onClick}
             className={`flex flex-col items-start relative rounded-[16px] overflow-hidden transition-all duration-500 ease-in-out shrink-0 group cursor-pointer hover:bg-[rgba(255,255,255,0.08)] ${className}`}
         >
-            {/* Thumbnail Area with Text Overlay - Updated dimensions for small variant to 320x180 */}
+            {/* Thumbnail Area - Updated dimensions for small variant to 320x180 */}
             <div className={`relative ${isSmall ? 'w-[320px] h-[180px]' : 'w-[480px] h-[270px]'} rounded-[16px] overflow-hidden backdrop-blur-[2.063px] backdrop-filter group`}>
                 {/* Background Image */}
                 <img
                     src={image}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="absolute inset-0 w-full h-full object-cover"
                 />
-
-                {/* Text Overlay */}
-                {(overlayMainText || overlaySubText) && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 px-6 text-center">
-                        {overlayMainText && (
-                            <h4
-                                className={`font-['Outfit',sans-serif] font-extrabold text-white leading-tight mb-1 drop-shadow-lg ${isSmall ? 'text-[32px]' : 'text-[38px]'}`}
-                                dangerouslySetInnerHTML={{ __html: overlayMainText }}
-                            />
-                        )}
-                        {overlaySubText && (
-                            <p className={`font-['Outfit',sans-serif] font-light text-white opacity-80 uppercase tracking-wider ${isSmall ? 'text-[10px]' : 'text-[12px]'}`}>
-                                {overlaySubText}
-                            </p>
-                        )}
-                    </div>
-                )}
-
-                {/* Gradient Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/20 z-0" />
             </div>
 
             {/* Bottom Content Area */}

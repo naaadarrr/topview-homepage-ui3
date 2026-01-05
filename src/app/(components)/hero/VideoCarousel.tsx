@@ -12,29 +12,21 @@ const carouselItems = [
     title: "Video Clone Agent",
     description: "Clone top competitor video ads as your own",
     image: imgFigure,
-    overlayMain: 'SEEDANCE <span style="color: #fd9b08;">1.5</span> PRO',
-    overlaySub: "Native Audio + End Frame + Multi-shot"
   },
   {
     title: "Holiday Sale",
     description: "Clone top competitor video ads as your own",
     image: imgFigure1,
-    overlayMain: "Holiday <span style='color: #fd9b08;'>50%</span> Sale",
-    overlaySub: "Limited Time Offer"
   },
   {
     title: "VEO 4",
     description: "Clone top competitor video ads as your own",
     image: imgFigure2,
-    overlayMain: "VEO <span style='color: #fd9b08;'>4</span>",
-    overlaySub: "Next Gen AI Video Generation"
   },
   {
     title: "SORA 2",
     description: "Clone top competitor video ads as your own",
     image: imgFigure3,
-    overlayMain: "SORA <span style='color: #fd9b08;'>2</span>",
-    overlaySub: "Cinematic Quality Videos"
   },
   {
     title: "SORA 2",
@@ -77,8 +69,6 @@ export default function VideoCarousel() {
               title={item.title}
               description={item.description}
               image={item.image}
-              overlayMainText={item.overlayMain}
-              overlaySubText={item.overlaySub}
               size={isLaptop ? 'small' : 'default'}
             />
           ))}
