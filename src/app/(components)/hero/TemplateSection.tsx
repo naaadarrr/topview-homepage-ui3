@@ -115,14 +115,14 @@ export default function TemplateSection({
   };
 
   return (
-    <section className="w-full flex flex-col items-start py-0 gap-4 overflow-hidden px-8">
+    <section className="w-full flex flex-col items-center py-0 gap-4 overflow-hidden px-8">
       {/* Header */}
-      <div className="flex flex-col items-start gap-1 w-full">
-        <h2 className="text-[36px] font-['Outfit',sans-serif] font-extrabold text-white text-left">
+      <div className="flex flex-col items-center gap-1 w-full">
+        <h2 className="text-[36px] font-['Outfit',sans-serif] font-extrabold text-white text-center">
           {title}
         </h2>
         {description && (
-          <p className="text-[14px] font-['Outfit',sans-serif] font-normal leading-[20px] text-[rgba(255,255,255,0.36)] text-left">
+          <p className="text-[14px] font-['Outfit',sans-serif] font-normal leading-[20px] text-[rgba(255,255,255,0.36)] text-center">
             {description}
           </p>
         )}
