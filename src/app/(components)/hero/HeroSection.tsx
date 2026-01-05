@@ -54,7 +54,7 @@ export default function HeroSection() {
     return (
         <div className="relative w-full flex flex-col items-center pt-[64px] pb-[96px] px-4 md:px-8 overflow-hidden">
             {/* Badge */}
-            <div className="relative z-10 mb-[24px]">
+            <div className="relative z-10 mb-[24px] w-fit mx-auto">
                 <div
                     className="flex items-center justify-center p-[1px] rounded-full"
                     style={{ backgroundImage: "linear-gradient(-90deg, rgba(230, 148, 148, 0.92) 0%, rgba(174, 142, 250, 0.8) 100%)" }}
