@@ -81,7 +81,7 @@ export default function HeroSection() {
                 <div className="relative w-full h-full bg-[#1C1C1D] rounded-[16px] border border-[rgba(255,255,255,0.05)] p-[16px] shadow-[0px_15px_33px_0px_rgba(0,0,0,0.1),0px_60px_60px_0px_rgba(0,0,0,0.09),0px_135px_81px_0px_rgba(0,0,0,0.05)]">
                     {/* Text Input */}
                     <textarea
-                        className="w-full h-[80px] bg-transparent text-[14px] text-white placeholder-[#646370] resize-none outline-none font-['Inter',sans-serif] leading-[22px]"
+                        className="w-full h-[80px] bg-transparent text-[16px] text-white placeholder-[#646370] resize-none outline-none font-['Inter',sans-serif] leading-[24px]"
                         placeholder="Upload your product image and enter your idea. You can also provide a reference video to replicate its content."
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
