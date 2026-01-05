@@ -49,6 +49,7 @@ const ReferenceIcon = ({ className }: { className?: string }) => (
 
 export default function HeroSection() {
     const [inputValue, setInputValue] = useState("");
+    const [isFocused, setIsFocused] = useState(false);
 
     return (
         <div className="relative w-full flex flex-col items-center pt-[64px] pb-[96px] px-4 md:px-8 overflow-hidden">
@@ -75,45 +76,49 @@ export default function HeroSection() {
                 Create Any Video,  Just Tell Your Agent
             </h1>
 
-            {/* Input Area */}
-            <div className="relative z-10 w-full max-w-[800px] bg-[#1C1C1D] rounded-[16px] border border-[rgba(255,255,255,0.05)] p-[16px] shadow-[0px_15px_33px_0px_rgba(0,0,0,0.1),0px_60px_60px_0px_rgba(0,0,0,0.09),0px_135px_81px_0px_rgba(0,0,0,0.05)]">
-                {/* Text Input */}
-                <textarea
-                    className="w-full h-[80px] bg-transparent text-[15px] text-white placeholder-[#646370] resize-none outline-none font-['Inter',sans-serif] leading-[24px]"
-                    placeholder="Upload your product image and enter your idea. You can also provide a reference video to replicate its content."
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                />
+            {/* Input Area Wrapper for Gradient Border */}
+            <div className={`relative z-10 w-full max-w-[800px] mt-[48px] rounded-[16px] transition-all duration-300 p-[1px] ${isFocused ? 'bg-gradient-to-b from-[#a3b1ff] to-[#788cff]' : 'bg-transparent'}`}>
+                <div className="relative w-full h-full bg-[#1C1C1D] rounded-[16px] border border-[rgba(255,255,255,0.05)] p-[16px] shadow-[0px_15px_33px_0px_rgba(0,0,0,0.1),0px_60px_60px_0px_rgba(0,0,0,0.09),0px_135px_81px_0px_rgba(0,0,0,0.05)]">
+                    {/* Text Input */}
+                    <textarea
+                        className="w-full h-[80px] bg-transparent text-[15px] text-white placeholder-[#646370] resize-none outline-none font-['Inter',sans-serif] leading-[24px]"
+                        placeholder="Upload your product image and enter your idea. You can also provide a reference video to replicate its content."
+                        value={inputValue}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        onFocus={() => setIsFocused(true)}
+                        onBlur={() => setIsFocused(false)}
+                    />
 
-                {/* Bottom Actions */}
-                <div className="flex items-center justify-between mt-[12px] max-w-full overflow-hidden">
-                    <div className="flex items-center gap-[8px]">
-                        {/* Upload Image Button */}
-                        <button className="flex items-center gap-[4px] p-[4px] sm:pl-[4px] sm:pr-[8px] sm:py-[4px] rounded-[8px] bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.16)] transition-colors group">
-                            <UploadIcon className="w-[24px] h-[24px] opacity-80 group-hover:opacity-100 transition-opacity" />
-                            <span className="text-[13px] text-[rgba(255,255,255,0.85)] group-hover:text-white font-['Inter',sans-serif] transition-colors hidden sm:block">Upload Image</span>
-                        </button>
+                    {/* Bottom Actions */}
+                    <div className="flex items-center justify-between mt-[12px] max-w-full overflow-hidden">
+                        <div className="flex items-center gap-[8px]">
+                            {/* Upload Image Button */}
+                            <button className="flex items-center gap-[4px] p-[4px] sm:pl-[4px] sm:pr-[8px] sm:py-[4px] rounded-[8px] bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.16)] transition-colors group">
+                                <UploadIcon className="w-[24px] h-[24px] opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <span className="text-[13px] text-[rgba(255,255,255,0.85)] group-hover:text-white font-['Inter',sans-serif] transition-colors hidden sm:block">Upload Image</span>
+                            </button>
 
-                        {/* Reference Video Button */}
-                        <button className="flex items-center gap-[4px] p-[4px] sm:pl-[4px] sm:pr-[8px] sm:py-[4px] rounded-[8px] bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.16)] transition-colors group">
-                            <ReferenceIcon className="w-[24px] h-[24px] opacity-80 group-hover:opacity-100 transition-opacity" />
-                            <span className="text-[13px] text-[rgba(255,255,255,0.85)] group-hover:text-white font-['Inter',sans-serif] transition-colors hidden sm:block">Reference Video</span>
-                        </button>
-                    </div>
-
-                    <div className="flex items-center gap-[12px]">
-                        {/* Aspect Ratio Selector */}
-                        <div className="flex items-center gap-[4px] cursor-pointer bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.16)] pl-[12px] pr-[4px] py-[4px] rounded-[8px] transition-all group">
-                            <span className="text-[13px] text-[rgba(255,255,255,0.85)] group-hover:text-white font-['Inter',sans-serif] leading-[16px] transition-colors">9:16</span>
-                            <div className="w-[24px] h-[24px] flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
-                                <img src={imgDropdownArr} alt="Dropdown" className="block max-w-none size-full brightness-0 invert" />
-                            </div>
+                            {/* Reference Video Button */}
+                            <button className="flex items-center gap-[4px] p-[4px] sm:pl-[4px] sm:pr-[8px] sm:py-[4px] rounded-[8px] bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.16)] transition-colors group">
+                                <ReferenceIcon className="w-[24px] h-[24px] opacity-80 group-hover:opacity-100 transition-opacity" />
+                                <span className="text-[13px] text-[rgba(255,255,255,0.85)] group-hover:text-white font-['Inter',sans-serif] transition-colors hidden sm:block">Reference Video</span>
+                            </button>
                         </div>
 
-                        {/* Send Button */}
-                        <button className="w-[32px] h-[32px] rounded-full transition-opacity hover:opacity-80">
-                            <SendIcon isActive={inputValue.trim().length > 0} />
-                        </button>
+                        <div className="flex items-center gap-[12px]">
+                            {/* Aspect Ratio Selector */}
+                            <div className="flex items-center gap-[4px] cursor-pointer bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.05)] hover:bg-[rgba(255,255,255,0.16)] pl-[12px] pr-[4px] py-[4px] rounded-[8px] transition-all group">
+                                <span className="text-[13px] text-[rgba(255,255,255,0.85)] group-hover:text-white font-['Inter',sans-serif] leading-[16px] transition-colors">9:16</span>
+                                <div className="w-[24px] h-[24px] flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity">
+                                    <img src={imgDropdownArr} alt="Dropdown" className="block max-w-none size-full brightness-0 invert" />
+                                </div>
+                            </div>
+
+                            {/* Send Button */}
+                            <button className="w-[32px] h-[32px] rounded-full transition-opacity hover:opacity-80">
+                                <SendIcon isActive={inputValue.trim().length > 0} />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

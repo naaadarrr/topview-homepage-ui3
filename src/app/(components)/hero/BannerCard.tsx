@@ -9,6 +9,7 @@ type BannerCardProps = {
     overlaySubText?: string;
     className?: string;
     onClick?: () => void;
+    size?: 'default' | 'small';
 };
 
 export default function BannerCard({
@@ -18,15 +19,18 @@ export default function BannerCard({
     overlayMainText,
     overlaySubText,
     className = "",
-    onClick
+    onClick,
+    size = 'default'
 }: BannerCardProps) {
+    const isSmall = size === 'small';
+
     return (
         <div
             onClick={onClick}
-            className={`flex flex-col items-start relative rounded-[16px] overflow-hidden transition-all duration-300 shrink-0 group cursor-pointer hover:bg-[rgba(255,255,255,0.08)] ${className}`}
+            className={`flex flex-col items-start relative rounded-[16px] overflow-hidden transition-all duration-500 ease-in-out shrink-0 group cursor-pointer hover:bg-[rgba(255,255,255,0.08)] ${className}`}
         >
             {/* Thumbnail Area with Text Overlay - Added rounded-[16px] for 4-corner rounding */}
-            <div className="relative w-[480px] h-[270px] rounded-[16px] overflow-hidden backdrop-blur-[2.063px] backdrop-filter">
+            <div className={`relative ${isSmall ? 'w-[400px] h-[225px]' : 'w-[480px] h-[270px]'} rounded-[16px] overflow-hidden backdrop-blur-[2.063px] backdrop-filter`}>
                 {/* Background Image */}
                 <img
                     src={image}
@@ -39,10 +43,10 @@ export default function BannerCard({
             {/* Bottom Content Area */}
             <div className="w-full flex items-center justify-between px-[12px] pt-0 pb-[12px] mt-[12px]">
                 <div className="flex flex-col gap-[2px] items-start">
-                    <h3 className="font-['Outfit',sans-serif] font-bold text-[24px] text-[#f7f7f8] leading-normal">
+                    <h3 className={`font-['Outfit',sans-serif] font-bold ${isSmall ? 'text-[20px]' : 'text-[24px]'} text-[#f7f7f8] leading-normal`}>
                         {title}
                     </h3>
-                    <p className="font-['Outfit',sans-serif] text-[14px] text-[rgba(255,255,255,0.48)] leading-[20px]">
+                    <p className={`font-['Outfit',sans-serif] ${isSmall ? 'text-[12px]' : 'text-[14px]'} text-[rgba(255,255,255,0.48)] leading-[20px]`}>
                         {description}
                     </p>
                 </div>

@@ -54,6 +54,19 @@ const carouselItems = [
 ];
 
 export default function VideoCarousel() {
+  const [isLaptop, setIsLaptop] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkScreen = () => {
+      // Laptop screens often have logical widths up to 1536px or 1728px (High DPI)
+      // Setting breakpoint to 1600px to cover most laptops as "small" size
+      setIsLaptop(window.innerWidth < 1600);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
   return (
     <div className="w-full pb-[96px] pt-0 overflow-hidden flex flex-col items-start px-0 relative">
       <div className="w-full relative overflow-x-auto no-scrollbar scroll-smooth">
@@ -66,6 +79,7 @@ export default function VideoCarousel() {
               image={item.image}
               overlayMainText={item.overlayMain}
               overlaySubText={item.overlaySub}
+              size={isLaptop ? 'small' : 'default'}
             />
           ))}
         </div>
