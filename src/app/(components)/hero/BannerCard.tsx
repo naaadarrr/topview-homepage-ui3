@@ -48,7 +48,7 @@ export default function BannerCard({
                             />
                         )}
                         {overlaySubText && (
-                            <p className={`font-['Outfit',sans-serif] font-light text-white opacity-80 uppercase tracking-wider ${isSmall ? 'text-[10px]' : 'text-[12px]'}`}>
+                            <p className="font-['Outfit',sans-serif] font-light text-white opacity-80 uppercase tracking-wider text-[12px]">
                                 {overlaySubText}
                             </p>
                         )}

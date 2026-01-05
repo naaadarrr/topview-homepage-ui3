@@ -38,7 +38,7 @@ const TabItem = ({ text, isActive, onClick }: TabItemProps) => {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-[8px] text-[14px] font-[500] font-['Outfit',sans-serif] transition-all whitespace-nowrap border relative flex items-center justify-center min-w-[53px] leading-[20px] group shrink-0 overflow-hidden ${isActive
+      className={`px-3 py-1.5 rounded-[8px] text-[12px] font-[500] font-['Outfit',sans-serif] transition-all whitespace-nowrap border relative flex items-center justify-center min-w-[53px] leading-[20px] group shrink-0 overflow-hidden ${isActive
         ? "bg-white border-white text-black"
         : "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.16)] text-[rgba(255,255,255,0.64)] hover:text-white/80"
         }`}
