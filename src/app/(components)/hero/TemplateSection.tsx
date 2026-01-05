@@ -145,20 +145,13 @@ export default function TemplateSection({
               ))}
             </div>
 
-            {!isTabsExpanded && (
-              <div className="absolute right-0 top-0 bottom-0 flex items-center pl-16 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
-                <div className="flex gap-2.5 pointer-events-auto py-2 pr-0 pl-4">
-                  <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(true)} />
-                </div>
+            <div className={`absolute right-0 pr-0 z-20 pointer-events-none transition-all duration-300 ${isTabsExpanded ? "top-3" : "top-0 bottom-0 flex items-center pl-16 bg-gradient-to-l from-black via-black to-transparent"
+              }`}>
+              <div className={`flex gap-2.5 pointer-events-auto pr-0 ${isTabsExpanded ? "" : "py-2 pl-4"}`}>
+                <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(!isTabsExpanded)} />
               </div>
-            )}
-          </div>
-
-          {isTabsExpanded && (
-            <div className="flex justify-center w-full pb-2">
-              <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(false)} />
             </div>
-          )}
+          </div>
         </div>
       )}
 
