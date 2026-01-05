@@ -42,7 +42,7 @@ const TabItem = ({ text, isActive, onClick }: TabItemProps) => {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 rounded-[8px] text-[14px] font-[500] font-['Outfit',sans-serif] transition-all whitespace-nowrap border relative flex items-center justify-center min-w-[53px] leading-[20px] group shrink-0 overflow-hidden ${isActive
+      className={`px-3 py-1.5 rounded-[8px] text-[14px] font-[500] font-['Outfit',sans-serif] transition-[background-color,border-color,color,box-shadow,transform] whitespace-nowrap border relative flex items-center justify-center min-w-[53px] leading-[20px] group shrink-0 overflow-hidden ${isActive
         ? "bg-white border-white text-black"
         : "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.16)] text-[rgba(255,255,255,0.64)] hover:text-white/80"
         }`}
@@ -130,7 +130,7 @@ export default function TemplateSection({
 
       {/* Tab List & Pagination */}
       {showTabs && (
-        <div className={`relative w-full max-w-[1856px] transition-[height] duration-500 ease-in-out ${isTabsExpanded ? "h-[148px]" : "h-[52px]"}`}>
+        <div className={`relative w-full max-w-[1856px] transition-[height] duration-300 ease-in-out ${isTabsExpanded ? "h-[136px]" : "h-[56px]"}`}>
           <div className="relative w-full h-full overflow-hidden">
             {/* Collapsed View (Scroll) */}
             <div
@@ -138,9 +138,9 @@ export default function TemplateSection({
               className={`absolute inset-0 flex items-start gap-2 py-3 w-full pr-14 overflow-x-auto no-scrollbar scroll-smooth transition-opacity duration-300 ${isTabsExpanded ? "opacity-0 pointer-events-none" : "opacity-100"
                 }`}
             >
-              {defaultCategories.map((cat) => (
+              {defaultCategories.map((cat, idx) => (
                 <TabItem
-                  key={cat}
+                  key={`${cat}-${idx}-scroll`}
                   text={cat}
                   isActive={activeCategory === cat}
                   onClick={() => setActiveCategory(cat)}
@@ -153,9 +153,9 @@ export default function TemplateSection({
               className={`absolute inset-0 flex items-start gap-2 py-3 w-full pr-14 flex-wrap justify-start transition-opacity duration-300 ${isTabsExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
                 }`}
             >
-              {defaultCategories.map((cat) => (
+              {defaultCategories.map((cat, idx) => (
                 <TabItem
-                  key={cat}
+                  key={`${cat}-${idx}-grid`}
                   text={cat}
                   isActive={activeCategory === cat}
                   onClick={() => setActiveCategory(cat)}
@@ -164,9 +164,9 @@ export default function TemplateSection({
             </div>
 
             {/* Shared Toggle Button Area */}
-            <div className="absolute right-0 top-0 h-[52px] flex items-center z-20 pointer-events-none">
+            <div className="absolute right-0 top-0 h-[56px] flex items-center z-20 pointer-events-none">
               <div className={`h-full w-32 bg-gradient-to-l from-black via-black/80 to-transparent transition-opacity duration-300 ${isTabsExpanded ? "opacity-0" : "opacity-100"}`} />
-              <div className={`h-full flex items-center pr-0 pl-2 pointer-events-auto transition-all duration-300 ${isTabsExpanded ? "bg-transparent" : "bg-black"}`}>
+              <div className={`h-full flex items-center pr-0 pl-2 pointer-events-auto transition-[background-color] duration-300 ${isTabsExpanded ? "bg-transparent" : "bg-black"}`}>
                 <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(!isTabsExpanded)} />
               </div>
             </div>
