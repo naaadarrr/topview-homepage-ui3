@@ -67,42 +67,7 @@ const TabItem = ({ text, isActive, onClick }: TabItemProps) => {
   );
 };
 
-interface ArrowProps {
-  direction: "left" | "right";
-  disabled?: boolean;
-  onClick: () => void;
-}
 
-const CarouselArrow = ({ direction, disabled, onClick }: ArrowProps) => {
-  return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={`w-10 h-10 rounded-full border border-white/5 backdrop-blur-[10.5px] flex items-center justify-center transition-all relative group/arrow overflow-hidden ${disabled
-        ? "opacity-50 cursor-not-allowed"
-        : "cursor-pointer hover:border-white/10 active:scale-95"
-        }`}
-      style={{
-        background: disabled
-          ? "rgba(255, 255, 255, 0.05)"
-          : "linear-gradient(rgba(51, 65, 255, 0.1) 0%, rgba(129, 162, 252, 0.1) 100%), rgba(255, 255, 255, 0.08)"
-      }}
-    >
-      {!disabled && (
-        <div className="absolute inset-0 bg-white/5 opacity-0 group-hover/arrow:opacity-100 transition-opacity" />
-      )}
-      <div className="absolute inset-0 pointer-events-none shadow-[inset_0px_0.833px_0px_0px_rgba(255,255,255,0.12)] rounded-full" />
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-        className={`relative z-10 transition-colors ${disabled ? "text-white/30" : "text-white group-hover/arrow:text-white"}`}>
-        {direction === "left" ? (
-          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        ) : (
-          <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        )}
-      </svg>
-    </button>
-  );
-};
 
 interface TemplateSectionProps {
   title?: string;
@@ -125,14 +90,6 @@ export default function TemplateSection({
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTabsExpanded, setIsTabsExpanded] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollTo = direction === "left" ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
-    }
-  };
 
   const ToggleButton = ({ isExpanded, onClick, className = "" }: { isExpanded: boolean; onClick: () => void; className?: string }) => {
     return (
@@ -189,10 +146,8 @@ export default function TemplateSection({
             </div>
 
             {!isTabsExpanded && (
-              <div className="absolute right-0 top-0 bottom-0 flex items-center pl-24 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
+              <div className="absolute right-0 top-0 bottom-0 flex items-center pl-16 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
                 <div className="flex gap-2.5 pointer-events-auto py-2 pr-0 pl-4">
-                  <CarouselArrow direction="left" onClick={() => scroll("left")} />
-                  <CarouselArrow direction="right" onClick={() => scroll("right")} />
                   <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(true)} />
                 </div>
               </div>
