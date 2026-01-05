@@ -123,6 +123,7 @@ export default function TemplateSection({
 }: TemplateSectionProps) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isTabsExpanded, setIsTabsExpanded] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -131,6 +132,25 @@ export default function TemplateSection({
       const scrollTo = direction === "left" ? scrollLeft - clientWidth / 2 : scrollLeft + clientWidth / 2;
       scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
     }
+  };
+
+  const ToggleButton = ({ isExpanded, onClick, className = "" }: { isExpanded: boolean; onClick: () => void; className?: string }) => {
+    return (
+      <button
+        onClick={onClick}
+        className={`w-10 h-10 rounded-full border border-white/5 backdrop-blur-[10.5px] flex items-center justify-center transition-all relative group/toggle overflow-hidden cursor-pointer hover:border-white/10 active:scale-95 ${className}`}
+        style={{
+          background: "linear-gradient(rgba(51, 65, 255, 0.1) 0%, rgba(129, 162, 252, 0.1) 100%), rgba(255, 255, 255, 0.08)"
+        }}
+      >
+        <div className="absolute inset-0 bg-white/5 opacity-0 group-hover/toggle:opacity-100 transition-opacity" />
+        <div className="absolute inset-0 pointer-events-none shadow-[inset_0px_0.833px_0px_0px_rgba(255,255,255,0.12)] rounded-full" />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+          className={`relative z-10 transition-transform duration-300 text-white ${isExpanded ? "rotate-180" : ""}`}>
+          <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+    );
   };
 
   return (
@@ -149,27 +169,41 @@ export default function TemplateSection({
 
       {/* Tab List & Pagination */}
       {showTabs && (
-        <div className="relative w-full flex items-center">
-          <div
-            ref={scrollRef}
-            className="flex gap-2 overflow-x-auto no-scrollbar py-3 w-full scroll-smooth"
-          >
-            {defaultCategories.map((cat) => (
-              <TabItem
-                key={cat}
-                text={cat}
-                isActive={activeCategory === cat}
-                onClick={() => setActiveCategory(cat)}
-              />
-            ))}
+        <div className={`relative w-full flex flex-col gap-4 max-w-[1856px]`}>
+          <div className="relative w-full flex items-center">
+            <div
+              ref={scrollRef}
+              className={`flex gap-2 py-3 w-full transition-all duration-300 ${isTabsExpanded
+                ? "flex-wrap overflow-visible justify-center"
+                : "overflow-x-auto no-scrollbar scroll-smooth"
+                }`}
+            >
+              {defaultCategories.map((cat) => (
+                <TabItem
+                  key={cat}
+                  text={cat}
+                  isActive={activeCategory === cat}
+                  onClick={() => setActiveCategory(cat)}
+                />
+              ))}
+            </div>
+
+            {!isTabsExpanded && (
+              <div className="absolute right-0 top-0 bottom-0 flex items-center pl-24 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
+                <div className="flex gap-2.5 pointer-events-auto py-2 pr-0 pl-4">
+                  <CarouselArrow direction="left" onClick={() => scroll("left")} />
+                  <CarouselArrow direction="right" onClick={() => scroll("right")} />
+                  <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(true)} />
+                </div>
+              </div>
+            )}
           </div>
 
-          <div className="absolute right-0 top-0 bottom-0 flex items-center pl-24 pr-0 z-20 pointer-events-none bg-gradient-to-l from-black via-black to-transparent">
-            <div className="flex gap-2.5 pointer-events-auto py-2 pr-0 pl-4">
-              <CarouselArrow direction="left" onClick={() => scroll("left")} />
-              <CarouselArrow direction="right" onClick={() => scroll("right")} />
+          {isTabsExpanded && (
+            <div className="flex justify-center w-full pb-2">
+              <ToggleButton isExpanded={isTabsExpanded} onClick={() => setIsTabsExpanded(false)} />
             </div>
-          </div>
+          )}
         </div>
       )}
 
