@@ -183,7 +183,7 @@ export default function Footer() {
             </div>
             <span className="text-white text-[14px] font-medium font-['Outfit',sans-serif] leading-[20px]">{currentLanguage}</span>
             <div className="relative w-6 h-6 ml-0 opacity-80 group-hover:opacity-100 transition-opacity">
-              <img src="/dropdown-icon.svg" alt="" className="block max-w-none size-full brightness-0 invert" />
+              <img src="/icons/dropdown-icon.svg" alt="" className="block max-w-none size-full brightness-0 invert" />
             </div>
           </button>
         </div>
