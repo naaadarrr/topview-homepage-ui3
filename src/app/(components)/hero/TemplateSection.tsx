@@ -178,7 +178,7 @@ export default function TemplateSection({
       <div className={`relative w-full transition-all duration-700 ease-in-out ${isExpanded ? "max-h-[5000px]" : "max-h-[1000px] overflow-hidden"
         }`}>
         {/* Masonry-like grid using columns - Support ultra-wide screens */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 2xl:columns-6 3xl:columns-8 gap-2 [column-fill:_balance]">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5 gap-2 [column-fill:_balance]">
           {templates.map((template, idx) => (
             <div key={idx} className="break-inside-avoid mb-2">
               <TemplateCard

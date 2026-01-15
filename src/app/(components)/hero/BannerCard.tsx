@@ -23,7 +23,7 @@ export default function BannerCard({
     return (
         <div
             onClick={onClick}
-            className={`flex flex-col items-start relative rounded-[16px] overflow-hidden transition-all duration-500 ease-in-out shrink-0 group cursor-pointer hover:bg-[rgba(255,255,255,0.08)] ${className}`}
+            className={`flex flex-col items-start relative rounded-[16px] overflow-hidden transition-all duration-500 ease-in-out shrink-0 group cursor-pointer hover:bg-[#232326] ${className}`}
         >
             {/* Thumbnail Area - Updated dimensions for small variant to 320x180 */}
             <div className={`relative ${isSmall ? 'w-[320px] h-[180px]' : 'w-[480px] h-[270px]'} rounded-[16px] overflow-hidden backdrop-blur-[2.063px] backdrop-filter group`}>

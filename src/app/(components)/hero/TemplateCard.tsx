@@ -28,7 +28,7 @@ const ArrowRightIcon = ({ className }: { className?: string }) => (
 
 export default function TemplateCard({ image, title, aspectRatio, hideTitle }: TemplateCardProps) {
   return (
-    <div className={`relative group cursor-pointer rounded-[12px] transition-all duration-300 flex flex-col overflow-hidden h-full ${hideTitle ? 'bg-[#000000eb] hover:bg-[rgba(255,255,255,0.16)]' : 'bg-[#000000eb] hover:bg-white/15'}`}>
+    <div className={`relative group cursor-pointer rounded-[12px] transition-all duration-300 flex flex-col overflow-hidden h-full ${hideTitle ? 'bg-[#000000eb] hover:bg-[#232326]' : 'bg-[#000000eb] hover:bg-[#232326]'}`}>
       {/* Image Frame */}
       <div className={`relative w-full ${aspectRatio ? aspectRatio : 'overflow-hidden flex-grow'} rounded-[12px] transition-all duration-300`}>
         <img

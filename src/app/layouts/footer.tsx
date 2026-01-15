@@ -60,7 +60,7 @@ export default function Footer() {
       {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none">
         <img
-          src="/bgFooter.png"
+          src="/images/bgFooter.png"
           alt=""
           className="w-full h-full object-cover opacity-100"
         />
@@ -106,7 +106,7 @@ export default function Footer() {
               <div className="flex items-center gap-2 pt-1">
                 <div className="relative w-[132px] h-[26px]">
                   <img
-                    src="/topview_logo.png"
+                    src="/branding/topview_logo.png"
                     alt="TopView"
                     className="block w-full h-auto"
                   />
@@ -191,7 +191,7 @@ export default function Footer() {
         {/* Huge Bottom Logo - Implementing node 4406:1890 */}
         <div className="pt-24 pb-12 flex justify-center opacity-30 pointer-events-none select-none group">
           <img
-            src="/TOPVIEW.svg"
+            src="/branding/TOPVIEW.svg"
             alt="TOPVIEW"
             className="w-full max-w-[1416px] h-auto object-contain block group-[.no-image]:hidden"
             onError={(e) => {
