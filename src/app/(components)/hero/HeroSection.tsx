@@ -53,27 +53,25 @@ export default function HeroSection() {
 
     return (
         <div className="relative w-full flex flex-col items-center pt-[64px] pb-[96px] px-4 md:px-8 overflow-hidden">
-            {/* Badge */}
-            <div className="relative z-10 mb-[24px] w-fit mx-auto">
-                <div
-                    className="flex items-center justify-center p-[1px] rounded-full"
-                    style={{ backgroundImage: "linear-gradient(-90deg, rgba(230, 148, 148, 0.92) 0%, rgba(174, 142, 250, 0.8) 100%)" }}
-                >
-                    <div
-                        className="relative flex items-center justify-center px-[12px] py-[6px] rounded-full overflow-hidden"
-                        style={{ backgroundImage: "linear-gradient(174.56deg, rgb(186, 223, 223) 10.218%, rgb(164, 173, 249) 91.054%)" }}
-                    >
-                        <span className="relative z-10 text-[14px] font-medium text-[#0e1bd3] font-['Outfit',sans-serif] leading-[16.8px] text-nowrap">
-                            Meet Topview - Your AI Video Agent
-                        </span>
-                        <div className="absolute inset-0 pointer-events-none shadow-[inset_0px_-3px_20px_0px_rgba(241,201,255,0.2),inset_0px_0px_6px_0px_rgba(255,255,255,0.2),inset_0px_0px_20px_6px_rgba(255,255,255,0.16)] rounded-full" />
-                    </div>
-                </div>
+            {/* Subtitle */}
+            <div className="relative z-10 mb-[24px] w-fit mx-auto flex flex-col justify-center" style={{ width: '225.48px', height: '11px' }}>
+                <span className="font-['Outfit',sans-serif] text-nowrap" style={{
+                    color: 'rgba(255, 255, 255, 0.80)',
+                    textAlign: 'center',
+                    fontSize: '15px',
+                    fontStyle: 'normal',
+                    fontWeight: 400,
+                    lineHeight: '24px',
+                    letterSpacing: '0.64px',
+                    textTransform: 'uppercase'
+                }}>
+                    Your AI Video Agent
+                </span>
             </div>
 
             {/* Heading */}
-            <h1 className="relative z-10 text-[48px] leading-[60px] font-bold text-white text-center font-['Outfit',sans-serif] mb-0 tracking-tight">
-                Create Any Video,  Just Tell Your Agent
+            <h1 className="relative z-10 text-[48px] leading-[60px] font-semibold text-white text-center font-['Outfit',sans-serif] mb-0 tracking-tight">
+                Generate, Edit, Collaborate — All in One Place
             </h1>
 
             {/* Input Area Wrapper for Gradient Border */}
