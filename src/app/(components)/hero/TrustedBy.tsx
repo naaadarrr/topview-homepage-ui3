@@ -30,7 +30,7 @@ export default function TrustedBy() {
         <motion.div
           className="flex gap-16 whitespace-nowrap min-w-full items-center opacity-60 hover:opacity-100 transition-opacity duration-300"
           animate={{
-            x: [0, "-50%"],
+            x: ["0%", "-50%"],
           }}
           transition={{
             x: {
@@ -40,7 +40,6 @@ export default function TrustedBy() {
               ease: "linear",
             },
           }}
-          whileHover={{ animationPlayState: "paused" }}
           style={{ display: "flex", width: "fit-content" }}
         >
           {doubledLogos.map((logo, index) => (

@@ -1,17 +1,8 @@
 "use client";
 
 import { prefixed } from "@/utils/media";
-import { Box, keyframes } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
-
-const marquee = keyframes`
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-1900px);
-  }
-`;
 
 export default function VideoWall() {
   const videoWallUrls = [
@@ -35,7 +26,6 @@ export default function VideoWall() {
         display="flex"
         gap="10px"
         textAlign="right"
-        animation={`${marquee} 20s linear infinite`}
         css={
           {
             // maskImage:

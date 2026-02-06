@@ -71,7 +71,7 @@ export default function HeroSection() {
 
             {/* Heading */}
             <h1 className="relative z-10 text-[48px] leading-[60px] font-semibold text-white text-center font-['Outfit',sans-serif] mb-0 tracking-tight">
-                Generate, Edit, Collaborate — All in One Place
+                Generate, Edit, Collaborate - All in One Place
             </h1>
 
             {/* Input Area Wrapper for Gradient Border */}
